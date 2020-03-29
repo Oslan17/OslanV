@@ -1,12 +1,48 @@
-header{
+.logo{
+/* 
+    height: 300px;
+    margin: 100px 50px 100px 50px; */
+    
+}
+.img_logo{
+    width: 250px; height: 250px
+}
 
-background: rgb(68, 170, 68);
-border-color:teal;
+.hero{
+
+background: rgb(212, 219, 245);
+align-self: center;
+border-color: black;
+margin-right: 50px;
+text-align: center;
 width: auto;
-height: 550;
 color:black;
+border-radius: 10px 5px 10px 5px;
+box-shadow: 6px 6px 6px black;
+
+
 
 }
+
+
+.menu{
+
+
+    text-align: left;
+    background: rgb(212, 219, 245);
+    align-self: center;
+    border-color: black;
+    margin-right: 50px;
+    width: auto;
+    height: 100px;
+    color:black;
+    border-radius: 10px 5px 10px 5px;
+    box-shadow: 6px 6px 6px black;
+
+  
+
+}
+
 
 body{
 
