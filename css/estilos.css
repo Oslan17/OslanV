@@ -1,48 +1,63 @@
 .header{
     margin-top: 5px;
     width: auto;
-    height: 250px;
+    height: 100px;
     background-color:  #1b2127 ;
-    border-radius: 10px 5px 10px 5px;
-
+  border-radius: 5px 5px 5px 5px;
+    position: relative;
+    color:white;
 } 
+
+.header a {
+    color:white;
+    text-decoration: none;
+}
 
 .img_logo{
 
     width: 250px;
-    height: 150px;
-    
+    height: 100px;
+    position: absolute;
+    margin-top: 0px;
+    left: 100p;
     }
-
-
 
 .menu {
 
+    width: auto;
+    height: 150px;
+    position: absolute;
+    margin-top: 15px;
+    left: 1100px;
+    border-radius: 1px;
+    border-color: whitesmoke;
+    border-style: solid;
     }
 
 .hero{
 background:#026fff;
 text-align: center;
-border-color: black;
+border-color: whitesmoke;
 text-align: center;
-
-height: 100px;
-color:black;
-border-radius: 10px 5px 10px 5px;
+height: 150px;
+color:whitesmoke;
+border-radius: 5px 5px 5px 5px;
 font-size: 30px;
-letter-spacing: 50px;
-
-
+/* letter-spacing: 50px; */
+background-image: url('../imagenes/hero_imagen.jpg');
+background-position-x:-80px;
+background-position-y:0px;
+border-radius: 1px;
+    border-color: whitesmoke;
+    border-style: solid;
 }
 
-
- 
-
-
-.div-sobremi{
+.div-sobremi {
 
 width: 500px;
-
+border-radius: 1px;
+    border-color: whitesmoke;
+    border-style: solid;
 
 }
 
@@ -81,6 +96,30 @@ h1{
     background-color:#1b2127;
     text-align: center;
     padding: 20px;
-    border-radius: 10px 5px 10px 5px;
+    border-radius: 5px 5px 5px 5px;
     margin-bottom: -35px;
+
+    border-radius: 1px;
+    border-color: whitesmoke;
+    border-style: solid;
+}
+.Contactame{
+
+    border-radius: 1px;
+    border-color: whitesmoke;
+    border-style: solid;
+
+
+
+}
+
+.experiencia{
+
+
+    border-radius: 1px;
+    border-color: whitesmoke;
+    border-style: solid;
+
+
+
 }
