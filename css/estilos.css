@@ -1,11 +1,13 @@
 .header{
-    margin-top: 5px;
+    margin-top:0px;
     width: auto;
     height: 100px;
     background-color:  #1b2127 ;
-  border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
     position: relative;
     color:white;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
 } 
 
 .header a {
@@ -15,64 +17,95 @@
 
 .img_logo{
 
-    width: 250px;
-    height: 100px;
-    position: absolute;
-    margin-top: 0px;
-    left: 100p;
+    width: 350px;
+    height: 350px;
+    position: absolute; 
+    margin-top: -120px;
+    float: left;
+
     }
 
 .menu {
 
     width: auto;
-    height: 150px;
     position: absolute;
-    margin-top: 15px;
     left: 1100px;
-    border-radius: 1px;
-    border-color: whitesmoke;
-    border-style: solid;
+    
+    
     }
 
 .hero{
+height: 150px;
 background:#026fff;
 text-align: center;
-border-color: whitesmoke;
-text-align: center;
-height: 150px;
 color:whitesmoke;
-border-radius: 5px 5px 5px 5px;
-font-size: 30px;
-/* letter-spacing: 50px; */
+border-radius: 4.5px 5px 10px 5px; 
 background-image: url('../imagenes/hero_imagen.jpg');
 background-position-x:-80px;
 background-position-y:0px;
-border-radius: 1px;
-    border-color: whitesmoke;
-    border-style: solid;
+-webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+padding: -5px;
+ 
+}
+
+.hero h1{
+
+ font-size: 80px;
+margin:0px
+
 }
 
 .div-sobremi {
-
-width: 500px;
-border-radius: 1px;
-    border-color: whitesmoke;
+/* 
+    width:500px;
+    height: auto;
+    border-radius: 1px;
+    border-color:  #1b2127;
     border-style: solid;
+    margin: 20px 10px 20px 400px; */
+
+  margin: 20px 40px;
+  margin-top: 40px;
+  background-color: white;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px 5px 10px 5px;
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+}
+
+    
 
 }
 
 .div-img_sobremi{
 
-width: 500px;
+/* width: 500px;
+width:auto;
+height: auto;
+border-radius: 1px;
+border-color:  #1b2127;
+border-style: solid;
+margin: 20px 10px 20px 400px; */
 
+
+margin: 20px 40px;
+  margin-top: -40px;
+  background-color: white;
+  position: absolute;
+  padding: 20px;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+  
 }
 
 body{
-background: #7e7c7c ;
+background: white;
 font-family: 'Source Sans Pro', sans-serif;
-margin:40px;
-margin-top: -35px;
-
+margin: -20px  10px;
 
 
 }
@@ -81,12 +114,29 @@ h1, h2, h3, h4, h5, h6 {
 font-family: 'Fjalla One';
 }
 
-h1{
-    font-size: 60px;
-    line-height: px;
-    letter-spacing: -.2px;
+
+
+
+
+.Contactame{
+    margin: 20px 40px;
+border-radius: 1px;
+-webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+padding: 20px;
+
 }
 
+.experiencia{
+
+    margin: 20px 40px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+    padding: 20px;
+
+
+}
 
 .footer{
 
@@ -97,29 +147,9 @@ h1{
     text-align: center;
     padding: 20px;
     border-radius: 5px 5px 5px 5px;
-    margin-bottom: -35px;
-
-    border-radius: 1px;
-    border-color: whitesmoke;
-    border-style: solid;
-}
-.Contactame{
-
-    border-radius: 1px;
-    border-color: whitesmoke;
-    border-style: solid;
-
-
-
-}
-
-.experiencia{
-
-
-    border-radius: 1px;
-    border-color: whitesmoke;
-    border-style: solid;
-
-
-
+    margin-bottom: 1px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+    
+    
 }
