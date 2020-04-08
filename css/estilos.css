@@ -1,57 +1,83 @@
 .header{
     margin-top:0px;
     width: auto;
-    height: 100px;
+    height: 90px;
     background-color:  #1b2127 ;
     border-radius: 5px 5px 0px 0px;
-    position: relative;
     color:white;
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+    display: flex;
+    justify-content: space-between;  
+    /* justify-content: center; */
+    
+
+   
+
+   
 } 
 
 .header a {
     color:white;
     text-decoration: none;
+    padding: 0 10px;
+  
+
+    
+     
 }
 
 .img_logo{
 
+
     width: 350px;
-    height: 350px;
-    position: absolute; 
-    margin-top: -120px;
-    float: left;
-
+    margin-top: -165px;
+    padding: 20px;
+     align-self: start;
     }
 
-.menu {
 
-    width: auto;
-    position: absolute;
-    left: 750px;
-  
+    .figure {
+        
+        margin:0px;
+        
+    }
+   
+   
+    .menu {
 
+        width: 550px;
+        height: auto;
+        padding:20px;
+        /* border: 1px solid white; */
+        justify-content: flex-end;
+        
+        
     
+         
+        
+        }
     
+     nav ul li {
+     
+        display: inline-block;
+        list-style: none;
+        
+       
     }
 
- nav ul li {
-
-    display: inline-block;
-
-}
    
 
 .hero{
 height: 300px;
+width: auto;
 background:#026fff;
 text-align: center;
 color:whitesmoke;
 border-radius: 4.5px 5px 10px 5px; 
 background-image: url('../imagenes/hero_imagen.jpg');
-background-position-x:-80px;
-background-position-y:0px;
+background-position-x:-502px;
+background-position-y:-500px;
 border-radius: 0px 0px 5px 5px;
 -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
 box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
@@ -97,8 +123,6 @@ box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
 
     
 
-}
-
 .div-img_sobremi{
 
 /* width: 500px;
@@ -110,21 +134,22 @@ border-style: solid;
 margin: 20px 10px 20px 400px; */
 
 
-margin: 20px 40px;
+/* margin: 20px 40px;
   margin-top: -40px;
   background-color: white;
   position: absolute;
   padding: 20px;
   text-align: center;
   -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-  
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+   */
 }
 
 body{
 background: #fafafa;
 font-family: 'Source Sans Pro', sans-serif;
-margin: -20px  10px;
+/* margin: -20px  10px; */
+margin:0;
 
 
 }
@@ -141,16 +166,6 @@ h3{
 
 
 
-.Contactame{
-    margin: 20px 40px;
-border-radius: 1px;
--webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-padding: 20px;
-border-radius: 5px 5px 0px 0px;
-
-}
-
 .experiencia{
 
     margin: 20px 40px;
@@ -164,16 +179,70 @@ border-radius: 5px 5px 0px 0px;
 
 .footer{
 
-    margin-top:  100px;
+    /* margin-top:  100px; */
     width: auto;
-    height: 80px;
+    height: 250px;
+    margin:0px;
     background-color:#1b2127;
-    text-align: center;
-    padding: 20px;
+    /* text-align: center; */
     border-radius: 5px 5px 5px 5px;
     margin-bottom: 1px;
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-    
+    color:white;
+    display: flex;
+    flex-direction: column;
+
     
 }
+
+
+    
+
+        .Contactame{
+                    /* margin: 20px 40px;
+                border-radius: 1px;
+                -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+                box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+                padding: 20px;
+                border-radius: 5px 5px 0px 0px; */
+                    align-self: flex-start;
+                    height: 150px;
+                    width: 500px;
+                    margin:-2px;
+                    padding: 10px;
+                    box-sizing: border-box;
+        }
+
+    .redes-sociales{
+
+        height: 6Z0px;
+        width: 500px;
+        align-self: flex-end;
+        margin-top: 0px;
+        box-sizing: border-box;
+        padding: 0px 130px;
+    
+        
+    }
+
+    .by{
+
+        /* height: 40px;
+        width: 250px; */
+        margin-top: 25px;
+        text-align: center;
+        align-self: center;
+        box-sizing: border-box;
+
+        
+    
+            }
+
+   .by p {
+    margin:0px
+
+   }
+
+        
+    
