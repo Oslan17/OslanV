@@ -1,4 +1,4 @@
 #ignorando imagenes:
-*.png
-*.jpg
+#*.png
+#*.jpg
 .gitgnore
