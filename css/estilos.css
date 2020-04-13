@@ -1,21 +1,26 @@
 .header{
     margin-top:0px;
     width: auto;
-    height: 90px;
+    height: 100px;
     background-color:  #1b2127 ;
     border-radius: 5px 5px 0px 0px;
     color:white;
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+  
     display: flex;
-    justify-content: space-between;  
-    /* justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
     
-
    
 
    
 } 
+
+
+
+
+
 
 .header a {
     color:white;
@@ -29,47 +34,39 @@
 
 .img_logo{
 
-
     width: 350px;
-    margin-top: -165px;
-    padding: 20px;
-     align-self: start;
+    height: 100px;
+    flex-shrink: 0;
+    margin-left: 80px;
+    overflow: hidden;
+
     }
 
-
-    .figure {
-        
-        margin:0px;
-        
-    }
-   
-   
     .menu {
 
-        width: 550px;
+        width: 400px;
         height: auto;
-        padding:20px;
-        /* border: 1px solid white; */
-        justify-content: flex-end;
+        margin:180px
         
         
-    
-         
         
-        }
+     }
     
      nav ul li {
      
         display: inline-block;
         list-style: none;
-        
+        box-sizing: border-box;
+        color: white;
+        padding: 3px;
+        font-size: 20px;
        
     }
 
    
 
 .hero{
-height: 300px;
+height: 250px;
 width: auto;
 background:#026fff;
 text-align: center;
@@ -83,15 +80,23 @@ border-radius: 0px 0px 5px 5px;
 box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
 padding: 40px;
 box-sizing: border-box;
+display: flex;
+justify-content: center;
+overflow: hidden;
+font-family: 'Source Sans Pro', sans-serif;
  
 }
 
 
-.hero h1{
+.hero-h1{
+ width: auto;
+ height: 50px;
+ font-size: 50px;
+ margin: -20px 0px;
+ box-sizing: border-box;
+ flex-shrink: 0;
 
- font-size: 100px;
- margin:0px;
- padding:40px;
+
 
 }
 
@@ -118,7 +123,8 @@ box-sizing: border-box;
   text-align: center;
   border-radius: 10px 5px 10px 5px;
   -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+ box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+ font-family: 'Source Sans Pro', sans-serif;
 }
 
     
@@ -134,7 +140,7 @@ border-style: solid;
 margin: 20px 10px 20px 400px; */
 
 
-/* margin: 20px 40px;
+  margin: 20px 40px;
   margin-top: -40px;
   background-color: white;
   position: absolute;
@@ -142,49 +148,118 @@ margin: 20px 10px 20px 400px; */
   text-align: center;
   -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-   */
+   
 }
 
 body{
 background: #fafafa;
 font-family: 'Source Sans Pro', sans-serif;
+margin:0px;
+
 /* margin: -20px  10px; */
 margin:0;
 
 
 }
-
-h1, h2, h3, h4, h5, h6 {
+h2, h4, h5, h6 {
 font-family: 'Fjalla One';
 }
 
+
+
+
 h3{
+
+    text-transform: uppercase;
+    font-family:'Source Sans Pro',sans-serif;
+    font-weight:bold;
     font-size: 40px;
-  
-    }
-
-
-
-
-.experiencia{
-
-    margin: 20px 40px;
-    border-radius: 1px;
-    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-    padding: 20px;
-    border-radius: 5px 5px 0px 0px;
-
+    margin:0px 25px;
+    text-align: center;
 }
 
-.footer{
 
-    /* margin-top:  100px; */
+.experiencia
+
+{
+   width: auto;
+    height: 1000px;
+    margin: 20px 5px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.50);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+    flex-wrap: wrap;
+ 
+   
+   }
+
+ .talent {
+
+   
+    margin: 5px;
+    width: 450px;
+    height: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
+    border-radius: 10px 5px 10px 5px;
+    text-align: center;
+   
+    
+   
+
+}
+ .talent-img {
+
+    background-image: url("/imagenes/habildiades1.jpg");
+    width: auto;    height: 200px;
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+    /* object-fit: cover; */
+  
+ }
+
+ .talent-list {
+    
     width: auto;
-    height: 250px;
+    height: auto;
+ 
+    text-align: left;
+
+ }
+
+
+ .container {
+    width: auto; /* Full width */
+    text-align: center;
+    height: auto;
+  }
+  
+  .skills {
+    text-align: right; /* Right-align text */
+    padding-top: 5px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    color: white; /* White text color */
+  }
+  
+  .html {width: 90%; background-color: #4CAF50;border-radius:5px;} /* Green */
+  .css {width: 80%; background-color: #2196F3;border-radius:5px;} /* Blue */
+  .js {width: 65%; background-color: #f44336;border-radius:5px;} /* Red */
+  .php {width: 60%; background-color: #808080; border-radius:5px;} /* Dark Grey */
+  .sql{width: 60%; background-color: #e22e2e; border-radius:5px;} /* Dark Grey */
+
+
+.footer{
+    width: auto;
+    height:auto;
     margin:0px;
     background-color:#1b2127;
-    /* text-align: center; */
     border-radius: 5px 5px 5px 5px;
     margin-bottom: 1px;
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
@@ -192,50 +267,92 @@ h3{
     color:white;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    
 }
 
+.Contactame{
 
-    
-
-        .Contactame{
-                    /* margin: 20px 40px;
-                border-radius: 1px;
-                -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-                box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-                padding: 20px;
-                border-radius: 5px 5px 0px 0px; */
-                    align-self: flex-start;
-                    height: 150px;
-                    width: 500px;
-                    margin:-2px;
-                    padding: 10px;
-                    box-sizing: border-box;
+    align-self: flex-start;
+    height: 40px;
+    width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
         }
+
+ .font-email{
+  border-radius: 50px;
+  padding: 7px;
+  font-size: 15px;
+ }
+
+ .button-enviar{
+
+    border-radius: 5px;
+    color: white;
+    background: #1b2127;
+    padding: 5px;
+
+
+ }
+
+ .boton-menu-contactame{
+
+    border-radius: 10px;
+    color: white;
+    border-style:solid;
+    padding: 3px;
+    font-size: 20px;
+
+
+ }
 
     .redes-sociales{
 
-        height: 6Z0px;
-        width: 500px;
+        height: 90px;
+        width: auto;
         align-self: flex-end;
-        margin-top: 0px;
+        padding: 10px;
         box-sizing: border-box;
-        padding: 0px 130px;
+
     
         
     }
 
+     .talent a{
+
+        color: grey;
+        text-decoration: none;
+        padding: 0 10px;
+        margin:0px;
+     }
+
+     .a-media{
+       padding: 10px;
+     }
+
+     .talent h2{
+      
+        margin:0px;
+        
+     }
+
+     .talent h2{
+
+        text-align: center;
+        color:grey;
+  
+     }
+
     .by{
 
-        /* height: 40px;
-        width: 250px; */
-        margin-top: 25px;
         text-align: center;
         align-self: center;
         box-sizing: border-box;
-
-        
+        height: 30px; 
+        width: 280px;
+        margin:0px;
+    
     
             }
 
@@ -243,6 +360,8 @@ h3{
     margin:0px
 
    }
+
+
 
         
     
