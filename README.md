@@ -1,2 +1,3 @@
-# https-oslan17.github.io
-Curso de desarrollo Web Platzi
+# Oslan Villalobos, Proyecto Portafolio.
+
+Curso de desarrollo Web Online en Platzi, Proyecto de curso. 
