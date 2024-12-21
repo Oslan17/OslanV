@@ -1,191 +1,89 @@
 <!DOCTYPE html>
-<html>
-        <head>
-                <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro&display=swap" rel="stylesheet">  
-                <link rel="icon" type="image/ico" href="./imagenes/favicon.ico">
-                <meta charset="UTF-8">
-                <title>OslanV</title>
-                <link rel="stylesheet" href="./css/estilos.css">
-            
-                 
-        </head>
-
-    <body>
-        <header>
-<div class="header">
-          
-                    <div class="img_logo">
-                        <img src="./imagenes/logo_2.png" style="
-                        width: 400px;
-                        height: 100px;
-                        object-fit: cover;
-                    "></div>              
-                    
-
-
-                    <div class="menu">
-                        <nav>
-                            <ul>
-                            <li><a href="#sobre_mi">Sobre Mi</a></li>
-                            <li ><a href="#experiencia"> Habilidades</a></li>
-                            <li class="boton-menu-contactame"><a href="#contacto">Contacto</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                
-</div>
-</header>
-
-            <section >
-            <div class="hero">
-           <div class="hero-h1"><h1>Web Developer</h1>></div>
-            </div>
-            </section>
-
-
-            <section class="portafolio">
-                <div class="div-sobremi">
-            
-        <section id="sobre_mi"> 
-                        <h3> Soy ingeniero en informatica 💻</h3>
-                                <article>
-
-                                    Ingeniero en constante aprendizaje, <strong>#Nunca_paro_de_aprender, Estudiante en PLATZI 💚</strong>, 4 años de experiencia en Sopporte  TI a nivel corporativo. <br>
-                                    Actualmente me desempeño como ingeniero de conectividad administrado redes MPLS.  Siempre               estoy en busqueda de nuevas oportunidades en  desarrollo de sitios webs
-                
-                                </article>
-                        </section> 
-
-                        </section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oslan Villalobos - DevOps Engineer Portfolio">
+    <meta name="author" content="Oslan Villalobos">
+    <title>Oslan Villalobos | DevOps Engineer</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>Oslan Villalobos</h1>
+            <p>DevOps Engineer | Cloud Enthusiast | Automation Expert</p>
         </div>
-                        
-           
-       
-        <section>
-         <h3><strong>Habilidades</strong></h3></section>  
-        <div class="experiencia">
-        
-                
+    </header>
 
-                            <div class="talent">
-                                <div class="talent-img"></div>
-                           
-                                    <div class="talent-list">
-                                        <ul>
-                                    <li>HTML5</li>
-                                    <li>CSS3</li>
-                                    <li>Javascript</li>
-                                    <li>React</li>
-                                    <li>UX -UI</li>
-                                    <li>Git - Github</li>
-                                    <li>Wordpress</li>
-                                    <li>SQL</li>
-                                    <li>Administrador de base de datos</li>
-                                    </ul>
-                                   </div>
-                                   
-                            </div>
+    <nav class="navbar">
+        <ul class="container">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-                            <div class="talent">
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm Oslan Villalobos, a passionate DevOps Engineer with expertise in cloud solutions, CI/CD pipelines, and system optimization. With a strong foundation in software engineering and a focus on automating complex workflows, I aim to build reliable and scalable infrastructures.</p>
+        </div>
+    </section>
 
-                                <div class="talent-img"></div>
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Docker & Kubernetes</div>
+                <div class="skill-item">AWS & GCP</div>
+                <div class="skill-item">CI/CD Pipelines</div>
+                <div class="skill-item">Infrastructure as Code (Terraform)</div>
+                <div class="skill-item">Linux System Administration</div>
+                <div class="skill-item">Monitoring & Logging</div>
+            </div>
+        </div>
+    </section>
 
-                                        <div class="talent-list">
-                                        <ul>
-                                        <li>Support IT</li>
-                                        <li>Telecomunicaciones:</li>
-                                        <li>Mesa de Ayuda</li>
-                                        <li>Hardware diagnostics</li>
-                                        <li>OS X</li>
-                                        <li>Windows</li>
-                                        <li>Linux</li>
-                                        <li>Windows Server management</li>
-                                        <li>Active Directory</li>
-                                        <li>Network administrator</li>
-                                        </ul>
-                                    </div>
-                            </div>
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Cloud Deployment Automation</h3>
+                    <p>Developed automated workflows for deploying multi-cloud environments using Terraform and CI/CD pipelines.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Monitoring & Alerting System</h3>
+                    <p>Implemented robust monitoring systems integrating Grafana, Prometheus, and custom alerting scripts.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Containerized Applications</h3>
+                    <p>Led the migration of monolithic applications to containerized microservices architecture with Docker and Kubernetes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to connect or discuss a project, feel free to reach out:</p>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:oslan17@gmail.com">oslan17@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/oslan-villalobos/" target="_blank">Oslan Villalobos</a></li>
+                <li>GitHub: <a href="https://github.com/Oslan17" target="_blank">github.com/Oslan17</a></li>
+            </ul>
+        </div>
+    </section>
 
-                            
-                            <div class="talent">
-
-                                <div class="talent-img"></div>
-
-                                        <div class="talent-list">
-                                            <h2>Portaflio</h2>
-                                     <p>Diseño web:</p>
-                                        <a href="https://seguridadigital.co/" target=»_blank> Seguridad Digital Ltda</a>
-                                    </div>
-                            </div>
-                            
-                            <div class="talent">
-                                <h2>Skill</h2>
-                            <div class="container">
-                                <p>HTML</p>
-                                <div class="skills html">90%</div>
-                              </div>
-                              
-                              <p>CSS</p>
-                              <div class="container">
-                              <div class="skills css">80%</div>
-                              </div>
-                              
-                              <p>JavaScript</p>
-                              <div class="container">
-                              <div class="skills js">65%</div>
-                              </div>
-                              
-
-
-                              <p>SQL</p>
-                              <div class="container">
-                                <div class="skills sql">70%</div>
-                              </div>
-
-                              <p>PHP</p>
-                              <div class="container">
-                                <div class="skills php">60%</div>
-                              </div>
-                             
-                           
-                           
-                            </div>
-                            
-                        </div>
-
-           
-
-
-          
-            <footer>
-    <div class="footer">  
-            <div class="Contactame">
-                <h2>Ponte en contacto conmigo:</h2>
-                <form  id="contacto" action="#">
-                <label for="email"></label><br>
-               <input type="input" placeholder=" &#9993;Dejame tu correo" id="email" class="font-email"> 
-                <button class="button-enviar">Enviar</button>
-                </form>
-               </div>
-      
-                        <div class="redes-sociales">
-                            <a href="https://www.facebook.com/Oslan17/" target="blank" class="a-media"><img src="./imagenes/facebook.svg" style="height:50px; width: 50px;"></a>
-                           <a href="https://www.instagram.com/oslan_evp/" target="blank" class="a-media" ><img src="./imagenes/ig.svg" style="height:50px; width: 50px;"></a>
-                       <a href="https://twitter.com/oslan_evp" target="blank"  class="a-media"><img src="./imagenes/tiwtter.svg" style="height:50px; width: 50px;"></a>
-                           <a href="https://github.com/Oslan17" target="blank" class="a-media" ><img src="./imagenes/Github.svg" style="height:50px; width: 50px;"></a>
-                        </div>
-                    <div class="by">
-                    <p>Desarrollado by Oslan Villalobos  &#x1f1fb;&#x1f1ea; -  &#x1f1e8;&#x1f1f4; </p>
-                    </div>
-     </div>
-            </footer>
-          
-          
-            
-        </body>
-
-
-
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Oslan Villalobos. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
