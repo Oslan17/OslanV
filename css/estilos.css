@@ -1,368 +1,163 @@
-.header{
-    margin-top:0px;
-    width: auto;
-    height: 100px;
-    background-color:  #1b2127 ;
-    border-radius: 5px 5px 0px 0px;
-    color:white;
-    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-  
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.main-header {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Navbar */
+.navbar {
+    background: #34495e;
+    color: #ecf0f1;
+    padding: 0.5rem 0;
+}
+
+.navbar ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-   
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-   
-} 
+.navbar ul li {
+    margin: 0 1rem;
+}
 
-
-
-
-
-
-.header a {
-    color:white;
+.navbar ul li a {
+    color: #ecf0f1;
     text-decoration: none;
-    padding: 0 10px;
-  
-
-    
-     
+    font-weight: bold;
 }
 
-.img_logo{
-
-    width: 350px;
-    height: 100px;
-    flex-shrink: 0;
-    margin-left: 80px;
-    overflow: hidden;
-
-    }
-
-    .menu {
-
-        width: 400px;
-        height: auto;
-        margin:180px
-        
-        
-        
-     }
-    
-     nav ul li {
-     
-        display: inline-block;
-        list-style: none;
-        box-sizing: border-box;
-        color: white;
-        padding: 3px;
-        font-size: 20px;
-       
-    }
-
-   
-
-.hero{
-height: 250px;
-width: auto;
-background:#026fff;
-text-align: center;
-color:whitesmoke;
-border-radius: 4.5px 5px 10px 5px; 
-background-image: url('../imagenes/hero_imagen.jpg');
-background-position-x:-502px;
-background-position-y:-500px;
-border-radius: 0px 0px 5px 5px;
--webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-padding: 40px;
-box-sizing: border-box;
-display: flex;
-justify-content: center;
-overflow: hidden;
-font-family: 'Source Sans Pro', sans-serif;
- 
+.navbar ul li a:hover {
+    color: #1abc9c;
 }
 
-
-.hero-h1{
- width: auto;
- height: 50px;
- font-size: 50px;
- margin: -20px 0px;
- box-sizing: border-box;
- flex-shrink: 0;
-
-
-
+/* Sections */
+section {
+    padding: 3rem 0;
 }
 
-.portafolioñ{
-
-
-
-}
-
-.div-sobremi {
-/* 
-    width:500px;
-    height: auto;
-    border-radius: 1px;
-    border-color:  #1b2127;
-    border-style: solid;
-    margin: 20px 10px 20px 400px; */
-
-  margin: 20px 40px;
-  margin-top: 40px;
-  background-color: white;
-  position: relative;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px 5px 10px 5px;
-  -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
- box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
- font-family: 'Source Sans Pro', sans-serif;
-}
-
-    
-
-.div-img_sobremi{
-
-/* width: 500px;
-width:auto;
-height: auto;
-border-radius: 1px;
-border-color:  #1b2127;
-border-style: solid;
-margin: 20px 10px 20px 400px; */
-
-
-  margin: 20px 40px;
-  margin-top: -40px;
-  background-color: white;
-  position: absolute;
-  padding: 20px;
-  text-align: center;
-  -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-   
-}
-
-body{
-background: #fafafa;
-font-family: 'Source Sans Pro', sans-serif;
-margin:0px;
-
-/* margin: -20px  10px; */
-margin:0;
-
-
-}
-h2, h4, h5, h6 {
-font-family: 'Fjalla One';
-}
-
-
-
-
-h3{
-
-    text-transform: uppercase;
-    font-family:'Source Sans Pro',sans-serif;
-    font-weight:bold;
-    font-size: 40px;
-    margin:0px 25px;
+.about-section {
+    background: #ecf0f1;
     text-align: center;
 }
 
-
-.experiencia
-
-{
-   width: auto;
-    height: auto;
-    margin: 20px 5px;
-    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-    border-radius: 5px 5px 0px 0px;
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.50);
-    display: flex;
-    justify-content: space-evenly;
-    padding: 30px;
-    flex-wrap: wrap;
- 
-   
-   }
-
- .talent {
-
-   
-    margin: 5px;
-    width: 450px;
-    height: 500px;
-    padding: 10px;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-    border-radius: 10px 5px 10px 5px;
-    text-align: center;
-   
-    
-   
-
-}
- .talent-img {
-
-    background-image: url("/imagenes/habildiades1.jpg");
-    width: auto;    height: 200px;
-    padding:0px;
-    margin:0px;
-    box-sizing: border-box;
-    border-radius: 5px 5px 0px 0px;
-    overflow: hidden;
-    /* object-fit: cover; */
-  
- }
-
- .talent-list {
-    
-    width: auto;
-    height: auto;
- 
-    text-align: left;
-
- }
-
-
- .container {
-    width: auto; /* Full width */
-    text-align: center;
-    height: auto;
-  }
-  
-  .skills {
-    text-align: right; /* Right-align text */
-    padding-top: 5px; /* Add top padding */
-    padding-bottom: 10px; /* Add bottom padding */
-    color: white; /* White text color */
-  }
-  
-  .html {width: 90%; background-color: #4CAF50;border-radius:5px;} /* Green */
-  .css {width: 80%; background-color: #2196F3;border-radius:5px;} /* Blue */
-  .js {width: 65%; background-color: #f44336;border-radius:5px;} /* Red */
-  .php {width: 60%; background-color: #808080; border-radius:5px;} /* Dark Grey */
-  .sql{width: 60%; background-color: #e22e2e; border-radius:5px;} /* Dark Grey */
-
-
-.footer{
-    width: auto;
-    height:180px;
-    margin: 180px 0px;
-    padding:20px;
-    background-color:#1b2127;
-    border-radius: 5px 5px 5px 5px;
-    margin-bottom: 1px;
-    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47); 
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.47);
-    color:white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+.about-section p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #7f8c8d;
 }
 
-.Contactame{
+.skills-section {
+    background: #f4f4f9;
+}
 
-    align-self: flex-start;
-    height: 40px;
-    width: 500px;
-    padding: 20px;
- 
-        }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
 
- .font-email{
-  border-radius: 50px;
-  padding: 7px;
-  font-size: 15px;
- }
-
- .button-enviar{
-
+.skill-item {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem;
     border-radius: 5px;
-    color: white;
-    background: #1b2127;
-    padding: 5px;
+    text-align: center;
+    font-size: 1rem;
+}
 
+.projects-section {
+    background: #ecf0f1;
+}
 
- }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
 
- .boton-menu-contactame{
+.project-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    border-radius: 10px;
-    color: white;
-    border-style:solid;
-    padding: 3px;
-    font-size: 20px;
+.project-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
 
+.project-item p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
 
- }
+/* Contact */
+.contact-section {
+    background: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+}
 
-    .redes-sociales{
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
 
-        height: 90px;
-        width: auto;
-        align-self: flex-end;
-        padding: 10px;
-        box-sizing: border-box;
+.contact-list li {
+    margin: 0.5rem 0;
+}
 
-    
-        
-    }
+.contact-list a {
+    color: #1abc9c;
+    text-decoration: none;
+}
 
-     .talent a{
+.contact-list a:hover {
+    text-decoration: underline;
+}
 
-        color: grey;
-        text-decoration: none;
-        padding: 0 10px;
-        margin:0px;
-     }
+/* Footer */
+.main-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem 0;
+}
 
-     .a-media{
-       padding: 10px;
-     }
-
-     .talent h2{
-      
-        margin:0px;
-        
-     }
-
-     .talent h2{
-
-        text-align: center;
-        color:grey;
-  
-     }
-
-    .by{
-
-        text-align: center;
-        align-self: center;
-      
-        height: 10px; 
-        width: 280px;
-        margin:0px;
-    
-    
-            }
-
-   .by p {
-    margin:0px
-
-   }
-
-
-
-        
-    
+.main-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
