@@ -76,6 +76,30 @@ body.dark .sidenav {
   box-shadow: 0 1px 0 0 #8c9eff !important;
 }
 
+/* Improve contrast for About section and profile card */
+#acerca .flow-text { color: rgba(0,0,0,0.82); }
+body.dark #acerca .flow-text { color: rgba(224,230,240,0.92); }
+
+#acerca .collection-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+body.dark #acerca .collection-item {
+  background: #0f1424 !important;
+  color: #e0e6f0 !important;
+  border-color: rgba(255,255,255,0.08);
+}
+
+.profile-card {
+  background: #0c1222 linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0)) !important;
+  color: #e9edf6;
+}
+body:not(.dark) .profile-card {
+  background: #ffffff linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0)) !important;
+  color: #0b0f1a;
+}
+.profile-card .chip { margin: 4px; }
+.profile-card h5 { color: inherit; font-weight: 700; }
+
 @media (max-width: 600px) {
   .hero {
     padding: 5rem 0 3rem;
@@ -88,5 +112,9 @@ body.dark .sidenav {
     margin-left: 0;
   }
 }
+
+/* Contact buttons layout */
+.contact-actions .btn-large { margin-right: .75rem; margin-bottom: .75rem; }
+.contact-actions .btn-large:last-child { margin-right: 0; }
 
 
