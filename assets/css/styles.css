@@ -1,5 +1,9 @@
 :root {
-  --hero-overlay: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.4));
+  --indigo-bg: #0c1331;
+  --indigo-elev: #0f1840;
+  --accent: #ffb300; /* amber */
+  --text-on-dark: #e6ecf7;
+  --hero-overlay: linear-gradient(180deg, rgba(2,4,12,.45), rgba(2,4,12,.65));
 }
 
 html, body {
@@ -9,6 +13,7 @@ html, body {
 .hero {
   background: var(--hero-overlay), url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
   padding: 7rem 0 5rem;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.06);
 }
 
 .hero-title {
@@ -46,8 +51,8 @@ html, body {
 
 /* Dark mode */
 body.dark {
-  background: #0b0f1a;
-  color: #e0e6f0;
+  background: var(--indigo-bg);
+  color: var(--text-on-dark);
 }
 
 body.dark .card,
@@ -61,7 +66,7 @@ body.dark .grey.lighten-4 {
 }
 
 body.dark .sidenav {
-  background: #0f1424;
+  background: var(--indigo-elev);
 }
 
 /* Forms contrast in dark section */
@@ -90,12 +95,14 @@ body.dark #acerca .collection-item {
 }
 
 .profile-card {
-  background: #0c1222 linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0)) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0)) !important;
   color: #e9edf6;
+  border: 1px solid rgba(255,255,255,0.06);
 }
 body:not(.dark) .profile-card {
   background: #ffffff linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0)) !important;
   color: #0b0f1a;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 .profile-card .chip { margin: 4px; }
 .profile-card h5 { color: inherit; font-weight: 700; }
@@ -104,9 +111,29 @@ body:not(.dark) .profile-card {
 .info-chips { margin-top: .5rem; }
 .info-chips .chip {
   background: rgba(255,255,255,0.12);
-  color: #e0e6f0;
+  color: var(--text-on-dark);
   margin: 6px;
 }
+.btn, .btn-large {
+  border-radius: 10px;
+}
+
+.btn.indigo, .btn-large.indigo, .indigo.lighten-1 {
+  background-color: var(--indigo-elev) !important;
+}
+
+.btn.indigo:hover, .btn-large.indigo:hover, .indigo.lighten-1:hover {
+  filter: brightness(1.1);
+}
+
+.btn-floating.indigo.lighten-1 {
+  background-color: var(--indigo-elev) !important;
+}
+
+.section-title {
+  color: var(--text-on-dark);
+}
+
 body:not(.dark) .info-chips .chip {
   background: rgba(0,0,0,0.06);
   color: #0b0f1a;
