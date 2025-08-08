@@ -266,3 +266,45 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
 .si-linkedin { -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7 0h4.8v2.2h.07C12.6 8.62 14.3 7.5 16.6 7.5 21.2 7.5 22 10.46 22 14.7V24h-5v-8.2c0-1.96-.04-4.48-2.73-4.48-2.73 0-3.15 2.13-3.15 4.33V24H7V8z"/></svg>') center/contain no-repeat; mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7 0h4.8v2.2h.07C12.6 8.62 14.3 7.5 16.6 7.5 21.2 7.5 22 10.46 22 14.7V24h-5v-8.2c0-1.96-.04-4.48-2.73-4.48-2.73 0-3.15 2.13-3.15 4.33V24H7V8z"/></svg>') center/contain no-repeat; }
 .si-x { -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.9 1.7h3.2l-7 8 8.2 12.6h-6.4l-4.7-7-5.4 7H3.5l7.4-8.5L3 1.7h6.5l4.2 6.2 5.2-6.2z"/></svg>') center/contain no-repeat; mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.9 1.7h3.2l-7 8 8.2 12.6h-6.4l-4.7-7-5.4 7H3.5l7.4-8.5L3 1.7h6.5l4.2 6.2 5.2-6.2z"/></svg>') center/contain no-repeat; }
 
+/* Footer improvements */
+.page-footer {
+  background: var(--elev) !important;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem 0 1rem;
+}
+
+.page-footer h5 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-on-dark);
+}
+
+.page-footer .grey-text.text-lighten-4 {
+  color: rgba(224,230,240,0.8) !important;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.page-footer .btn-floating {
+  margin: 0 8px 8px 0;
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.page-footer .btn-floating:hover {
+  background: rgba(255,255,255,0.15) !important;
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  background: rgba(0,0,0,0.2) !important;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.footer-copyright .container {
+  color: rgba(224,230,240,0.7);
+  font-size: 0.9rem;
+}
+
