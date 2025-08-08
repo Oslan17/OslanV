@@ -1,0 +1,92 @@
+:root {
+  --hero-overlay: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.4));
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  background: var(--hero-overlay), url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+  padding: 7rem 0 5rem;
+}
+
+.hero-title {
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin-bottom: 1rem;
+}
+
+.hero-ctas .btn-large + .btn-large {
+  margin-left: .75rem;
+}
+
+.section-title {
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.section-subtitle {
+  margin-bottom: 2rem;
+}
+
+.profile-card {
+  padding-top: 1rem;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.theme-switch, .theme-switch-m {
+  margin-top: .8rem;
+}
+
+/* Dark mode */
+body.dark {
+  background: #0b0f1a;
+  color: #e0e6f0;
+}
+
+body.dark .card,
+body.dark .collection-item {
+  background: #121829 !important;
+  color: #e0e6f0 !important;
+}
+
+body.dark .grey.lighten-4 {
+  background: #0f1424 !important;
+}
+
+body.dark .sidenav {
+  background: #0f1424;
+}
+
+/* Forms contrast in dark section */
+#contacto .input-field input,
+#contacto .input-field textarea {
+  border-bottom: 1px solid rgba(255,255,255,.7) !important;
+}
+
+#contacto .input-field input:focus,
+#contacto .input-field textarea:focus {
+  border-bottom: 1px solid #8c9eff !important;
+  box-shadow: 0 1px 0 0 #8c9eff !important;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 5rem 0 3rem;
+  }
+  .hero-ctas .btn-large {
+    width: 100%;
+    margin-bottom: .75rem;
+  }
+  .hero-ctas .btn-large + .btn-large {
+    margin-left: 0;
+  }
+}
+
+
