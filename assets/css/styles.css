@@ -219,14 +219,46 @@ body:not(.dark) .info-chips .chip {
 /* Brand buttons */
 .btn-brand { color: #0b0f1a !important; background: #ffffff !important; }
 body.dark .btn-brand { color: #ffffff !important; background: #000000 !important; }
-.brand-linkedin { background: #0a66c2 !important; color: #fff !important; }
-.brand-github { background: #0d1117 !important; color: #fff !important; }
-.brand-x { background: #000000 !important; color: #fff !important; }
+.brand-linkedin { background: #0a66c2 !important; color: #fff !important; border: none !important; }
+.brand-github { background: #0d1117 !important; color: #fff !important; border: none !important; }
+.brand-x { background: #000000 !important; color: #fff !important; border: none !important; }
 .brand-linkedin:hover, .brand-github:hover, .brand-x:hover { filter: brightness(1.08); }
-.brand-linkedin { border: 1px solid rgba(10,102,194,0.3) }
-.brand-github { border: 1px solid rgba(255,255,255,0.16) }
-.brand-x { border: 1px solid rgba(29,161,242,0.25) }
-.btn-brand:hover { filter: brightness(1.05); }
+
+/* Override Materialize button styles */
+.btn-brand.brand-linkedin, .btn-brand.brand-github, .btn-brand.brand-x {
+  color: #fff !important;
+}
+
+/* Contact section improvements */
+.contact-section {
+  background: linear-gradient(135deg, var(--bg) 0%, var(--elev) 100%) !important;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-actions .btn-large {
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
+.info-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.info-chips .chip {
+  background: rgba(255,255,255,0.1) !important;
+  color: var(--text-on-dark) !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  margin: 0;
+}
 
 /* Simple brand icons (SVG via CSS mask) */
 .brand-icon { display: inline-block; width: 20px; height: 20px; margin-right: 8px; background: currentColor; }
