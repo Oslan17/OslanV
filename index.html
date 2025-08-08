@@ -23,11 +23,13 @@
     <!-- Materialize CSS & Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
   </head>
-  <body class="blue-grey lighten-5">
+  <body>
     <!-- Navbar -->
-    <nav class="nav-extended indigo darken-4">
+    <nav class="nav-extended indigo darken-4 transparent-nav" data-scrolled="false">
       <div class="nav-wrapper container">
         <a href="#home" class="brand-logo">OslanV</a>
         <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -50,21 +52,47 @@
     </ul>
 
     <!-- Hero -->
-    <header id="home" class="section hero indigo darken-4 white-text">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m10 l8">
-            <h1 class="hero-title">Transform your business with software and AI</h1>
-            <p class="flow-text">
-              I specialize in software project management and development, and AI‑powered automation. I work with companies of all sizes and industries, delivering solutions that optimize processes, improve customer experience, and elevate digital presence.
-            </p>
-            <div class="hero-ctas">
-              <a href="#contacto" class="btn-large waves-effect waves-dark btn-accent">
-                <i class="material-icons left">handshake</i> Let’s work together
-              </a>
-              <a href="#proyectos" class="btn-large waves-effect white indigo-text text-darken-4">
-                <i class="material-icons left">work</i> View projects
-              </a>
+    <header id="home" class="section hero white-text">
+      <div class="hero-bg-blob"></div>
+      <div class="container hero-grid">
+        <div class="hero-col reveal">
+          <div class="hero-badges">
+            <span class="chip chip-accent">Software & AI</span>
+            <span class="chip chip-outline">Cloud • Automation</span>
+          </div>
+          <h1 class="hero-title">Transform your business with software and AI</h1>
+          <p class="hero-subtitle">
+            I design, build and integrate modern solutions that automate workflows, improve customer experience, and scale your digital operations.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contacto" class="btn-large waves-effect waves-dark btn-accent">
+              <i class="material-icons left">handshake</i> Let’s work together
+            </a>
+            <a href="#proyectos" class="btn-large btn-outline waves-effect">
+              <i class="material-icons left">work</i> View projects
+            </a>
+          </div>
+        </div>
+        <div class="hero-media reveal">
+          <div class="hero-card glass-card">
+            <span class="material-icons hero-card-icon">smart_toy</span>
+            <div class="hero-card-text">
+              <h6>AI Assistants</h6>
+              <p>RAG • Agents • Workflows</p>
+            </div>
+          </div>
+          <div class="hero-card glass-card">
+            <span class="material-icons hero-card-icon">hub</span>
+            <div class="hero-card-text">
+              <h6>Integrations</h6>
+              <p>CRMs • ERPs • Payments</p>
+            </div>
+          </div>
+          <div class="hero-card glass-card">
+            <span class="material-icons hero-card-icon">cloud</span>
+            <div class="hero-card-text">
+              <h6>Cloud</h6>
+              <p>AWS • Azure • GCP</p>
             </div>
           </div>
         </div>
@@ -74,53 +102,53 @@
     <!-- Servicios -->
     <section id="servicios" class="section">
       <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title reveal">Services</h2>
+        <p class="section-subtitle reveal">
           Custom application development, platform integrations, AI implementations for automation and intelligent assistants, and AI‑generated content. I also provide cloud support, digital campaigns, and end‑to‑end technology consulting.
         </p>
         <div class="row">
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
+          <div class="col s12 m6 l4 reveal">
+            <div class="card hoverable glass-card">
               <div class="card-content">
                 <span class="card-title"><i class="material-icons left">apps</i>Development</span>
                 <p>Custom web and mobile apps focused on performance, scalability, and user experience.</p>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
+          <div class="col s12 m6 l4 reveal">
+            <div class="card hoverable glass-card">
               <div class="card-content">
                 <span class="card-title"><i class="material-icons left">hub</i>Integrations</span>
                 <p>Connect your systems and data: CRMs, ERPs, payments, analytics, and seamless automations.</p>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
+          <div class="col s12 m6 l4 reveal">
+            <div class="card hoverable glass-card">
               <div class="card-content">
                 <span class="card-title"><i class="material-icons left">smart_toy</i>AI & Automation</span>
                 <p>Intelligent assistants, RAG, agents, workflows, and copilots to accelerate your processes.</p>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
+          <div class="col s12 m6 l4 reveal">
+            <div class="card hoverable glass-card">
               <div class="card-content">
                 <span class="card-title"><i class="material-icons left">campaign</i>AI Content</span>
                 <p>Content generation for marketing and communication aligned with your brand and goals.</p>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
+          <div class="col s12 m6 l4 reveal">
+            <div class="card hoverable glass-card">
               <div class="card-content">
                 <span class="card-title"><i class="material-icons left">cloud</i>Cloud</span>
                 <p>AWS, Azure, and Google Cloud: architecture, deployments, observability, and cost optimization.</p>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
+          <div class="col s12 m6 l4 reveal">
+            <div class="card hoverable glass-card">
               <div class="card-content">
                 <span class="card-title"><i class="material-icons left">insights</i>Marketing & Consulting</span>
                 <p>SEO, SEM, social media, and technology consulting to amplify your digital presence.</p>
@@ -132,14 +160,14 @@
     </section>
 
     <!-- Proyectos -->
-    <section id="proyectos" class="section grey lighten-4">
+    <section id="proyectos" class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title reveal">Projects</h2>
         <div class="row">
-          <div class="col s12 m6">
-            <div class="card hoverable">
+          <div class="col s12 m6 reveal">
+            <div class="card hoverable feature-card glass-card">
               <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80&auto=format&fit=crop" alt="Project 1" />
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80&auto=format&fit=crop" alt="Project 1" />
               </div>
               <div class="card-content">
                 <span class="card-title">AI Automation</span>
@@ -150,10 +178,10 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m6">
-            <div class="card hoverable">
+          <div class="col s12 m6 reveal">
+            <div class="card hoverable feature-card glass-card">
               <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80&auto=format&fit=crop" alt="Project 2" />
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop" alt="Project 2" />
               </div>
               <div class="card-content">
                 <span class="card-title">SaaS Platform</span>
@@ -172,7 +200,7 @@
     <section id="acerca" class="section">
       <div class="container">
         <div class="row">
-          <div class="col s12 m7">
+          <div class="col s12 m7 reveal">
             <h2 class="section-title">About me</h2>
             <p class="flow-text">
               I help organizations with their digital transformation through scalable, efficient, and innovative solutions. I design and implement strategies that connect business and technology to deliver fast, measurable value.
@@ -184,8 +212,8 @@
               <li class="collection-item"><i class="material-icons left">check_circle</i> Cloud, security, and performance</li>
             </ul>
           </div>
-          <div class="col s12 m5">
-            <div class="card center hoverable profile-card">
+          <div class="col s12 m5 reveal">
+            <div class="card center hoverable profile-card glass-card">
               <div class="card-content">
                 <img class="circle responsive-img profile-img" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300&q=80&auto=format&fit=crop" alt="Profile" />
                 <h5>Oslan Villalobos</h5>
@@ -206,15 +234,15 @@
     </section>
 
     <!-- Contact -->
-    <section id="contacto" class="section indigo darken-4 white-text">
+    <section id="contacto" class="section contact-section white-text">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle white-text">
+        <h2 class="section-title reveal">Contact</h2>
+        <p class="section-subtitle white-text reveal">
           Ready to start? Book a call or send me a message.
         </p>
         <div class="row">
-          <div class="col s12 m8 contact-actions">
-            <a id="emailCopyBtn" href="#" class="btn-large indigo lighten-1 waves-effect waves-light" data-email="oslanevillalobos@yahoo.com">
+          <div class="col s12 m8 contact-actions reveal">
+            <a id="emailCopyBtn" href="#" class="btn-large btn-accent waves-effect waves-dark" data-email="oslanevillalobos@yahoo.com">
               <i class="material-icons left">alternate_email</i>
               oslanevillalobos@yahoo.com
             </a>
@@ -228,7 +256,7 @@
               <span class="brand-icon si-x left"></span> X
             </a>
           </div>
-          <div class="col s12 m4">
+          <div class="col s12 m4 reveal">
             <div class="info-chips" aria-label="Quick info">
               <div class="chip">Open to projects</div>
               <div class="chip">Remote / Global</div>
