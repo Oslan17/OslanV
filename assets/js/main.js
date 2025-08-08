@@ -11,23 +11,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function setupThemeToggle() {
-  const toggle = document.getElementById('darkModeToggle');
-  const toggleMobile = document.getElementById('darkModeToggleMobile');
+  const toggleBtn = document.getElementById('themeToggleBtn');
+  const toggleBtnMobile = document.getElementById('themeToggleBtnMobile');
   const stored = localStorage.getItem('prefers-dark') === 'true';
 
   if (stored) document.body.classList.add('dark');
-  if (toggle) toggle.checked = stored;
-  if (toggleMobile) toggleMobile.checked = stored;
 
   const sync = (isDark) => {
     document.body.classList.toggle('dark', isDark);
     localStorage.setItem('prefers-dark', String(isDark));
-    if (toggle && toggle.checked !== isDark) toggle.checked = isDark;
-    if (toggleMobile && toggleMobile.checked !== isDark) toggleMobile.checked = isDark;
   };
 
-  if (toggle) toggle.addEventListener('change', (e) => sync(e.target.checked));
-  if (toggleMobile) toggleMobile.addEventListener('change', (e) => sync(e.target.checked));
+  const invert = () => sync(!document.body.classList.contains('dark'));
+  if (toggleBtn) toggleBtn.addEventListener('click', (e) => { e.preventDefault(); invert(); });
+  if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', (e) => { e.preventDefault(); invert(); });
 }
 
 function setupEmailCopy() {

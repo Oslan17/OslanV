@@ -1,9 +1,10 @@
 :root {
-  --indigo-bg: #0c1331;
-  --indigo-elev: #0f1840;
-  --accent: #ffb300; /* amber */
+  --bg: #0b1226; /* new cool navy */
+  --elev: #121a33;
+  --accent: #64ffda; /* teal mint */
+  --accent-ink: #003b33;
   --text-on-dark: #e6ecf7;
-  --hero-overlay: linear-gradient(180deg, rgba(2,4,12,.45), rgba(2,4,12,.65));
+  --hero-overlay: linear-gradient(180deg, rgba(3,8,24,.5), rgba(3,8,24,.7));
 }
 
 html, body {
@@ -51,7 +52,7 @@ html, body {
 
 /* Dark mode */
 body.dark {
-  background: var(--indigo-bg);
+  background: var(--bg);
   color: var(--text-on-dark);
 }
 
@@ -66,7 +67,7 @@ body.dark .grey.lighten-4 {
 }
 
 body.dark .sidenav {
-  background: var(--indigo-elev);
+  background: var(--elev);
 }
 
 /* Forms contrast in dark section */
@@ -119,7 +120,7 @@ body:not(.dark) .profile-card {
 }
 
 .btn.indigo, .btn-large.indigo, .indigo.lighten-1 {
-  background-color: var(--indigo-elev) !important;
+  background-color: var(--elev) !important;
 }
 
 .btn.indigo:hover, .btn-large.indigo:hover, .indigo.lighten-1:hover {
@@ -127,12 +128,23 @@ body:not(.dark) .profile-card {
 }
 
 .btn-floating.indigo.lighten-1 {
-  background-color: var(--indigo-elev) !important;
+  background-color: var(--elev) !important;
 }
 
 .section-title {
   color: var(--text-on-dark);
 }
+
+/* App bar color */
+nav.indigo.darken-4 {
+  background-color: var(--elev) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Accent buttons */
+.btn-accent { background: var(--accent) !important; color: var(--accent-ink) !important; }
+.btn-accent:hover { filter: brightness(1.05); }
+
 
 body:not(.dark) .info-chips .chip {
   background: rgba(0,0,0,0.06);
