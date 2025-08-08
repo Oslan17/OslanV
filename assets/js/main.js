@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setupThemeToggle();
 
   setupEmailCopy();
+
+  setupScrollEffects();
 });
 
 function setupThemeToggle() {
@@ -42,6 +44,27 @@ function setupEmailCopy() {
       window.location.href = `mailto:${email}`;
     }
   });
+}
+
+function setupScrollEffects() {
+  const nav = document.querySelector('nav.transparent-nav');
+  const onScroll = () => {
+    if (!nav) return;
+    const scrolled = window.scrollY > 8;
+    nav.setAttribute('data-scrolled', String(scrolled));
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 }
 
 
