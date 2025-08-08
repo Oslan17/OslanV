@@ -219,6 +219,10 @@ body:not(.dark) .info-chips .chip {
 /* Brand buttons */
 .btn-brand { color: #0b0f1a !important; background: #ffffff !important; }
 body.dark .btn-brand { color: #ffffff !important; background: #000000 !important; }
+.brand-linkedin { background: #0a66c2 !important; color: #fff !important; }
+.brand-github { background: #0d1117 !important; color: #fff !important; }
+.brand-x { background: #000000 !important; color: #fff !important; }
+.brand-linkedin:hover, .brand-github:hover, .brand-x:hover { filter: brightness(1.08); }
 .brand-linkedin { border: 1px solid rgba(10,102,194,0.3) }
 .brand-github { border: 1px solid rgba(255,255,255,0.16) }
 .brand-x { border: 1px solid rgba(29,161,242,0.25) }
