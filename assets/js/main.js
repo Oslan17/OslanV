@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   setupThemeToggle();
+
+  setupEmailCopy();
 });
 
 function setupThemeToggle() {
@@ -26,6 +28,23 @@ function setupThemeToggle() {
 
   if (toggle) toggle.addEventListener('change', (e) => sync(e.target.checked));
   if (toggleMobile) toggleMobile.addEventListener('change', (e) => sync(e.target.checked));
+}
+
+function setupEmailCopy() {
+  const btn = document.getElementById('emailCopyBtn');
+  if (!btn) return;
+  const email = btn.getAttribute('data-email');
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(email);
+      const toast = `Email copied: ${email}`;
+      M.toast({ html: toast });
+    } catch (err) {
+      // Fallback: open mailto
+      window.location.href = `mailto:${email}`;
+    }
+  });
 }
 
 
