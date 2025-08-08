@@ -100,6 +100,18 @@ body:not(.dark) .profile-card {
 .profile-card .chip { margin: 4px; }
 .profile-card h5 { color: inherit; font-weight: 700; }
 
+/* Minimal info chips in contact */
+.info-chips { margin-top: .5rem; }
+.info-chips .chip {
+  background: rgba(255,255,255,0.12);
+  color: #e0e6f0;
+  margin: 6px;
+}
+body:not(.dark) .info-chips .chip {
+  background: rgba(0,0,0,0.06);
+  color: #0b0f1a;
+}
+
 @media (max-width: 600px) {
   .hero {
     padding: 5rem 0 3rem;
