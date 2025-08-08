@@ -1,89 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oslan Villalobos - DevOps Engineer Portfolio">
-    <meta name="author" content="Oslan Villalobos">
-    <title>Oslan Villalobos | DevOps Engineer</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/favicon.png">
-</head>
-<body>
-    <header class="main-header">
-        <div class="container">
-            <h1>Oslan Villalobos</h1>
-            <p>DevOps Engineer | Cloud Enthusiast | Automation Expert</p>
-        </div>
-    </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a237e" />
+    <title>Personal Brand — Software & AI Consulting</title>
+    <meta name="description" content="Software project management and development, AI automation, platform integrations, AI content, cloud and digital campaigns." />
 
-    <nav class="navbar">
-        <ul class="container">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Software & AI Consulting" />
+    <meta property="og:description" content="Modern, scalable solutions: apps, integrations, AI automation, content and cloud." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200&q=80&auto=format&fit=crop" />
+
+    <!-- Materialize CSS & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body class="blue-grey lighten-5">
+    <!-- Navbar -->
+    <nav class="nav-extended indigo darken-4">
+      <div class="nav-wrapper container">
+        <a href="#home" class="brand-logo">OslanV</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#servicios">Services</a></li>
+          <li><a href="#proyectos">Projects</a></li>
+          <li><a href="#acerca">About</a></li>
+          <li><a href="#contacto" class="btn-small indigo lighten-1 waves-effect waves-light">Contact</a></li>
+          <li>
+            <div class="switch theme-switch">
+              <label>
+                <i class="material-icons tiny">light_mode</i>
+                <input id="darkModeToggle" type="checkbox" />
+                <span class="lever"></span>
+                <i class="material-icons tiny">dark_mode</i>
+              </label>
+            </div>
+          </li>
         </ul>
+      </div>
     </nav>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hello! I'm Oslan Villalobos, a passionate DevOps Engineer with expertise in cloud solutions, CI/CD pipelines, and system optimization. With a strong foundation in software engineering and a focus on automating complex workflows, I aim to build reliable and scalable infrastructures.</p>
+    <ul class="sidenav" id="mobile-nav">
+      <li><a href="#servicios">Services</a></li>
+      <li><a href="#proyectos">Projects</a></li>
+      <li><a href="#acerca">About</a></li>
+      <li><a href="#contacto">Contact</a></li>
+      <li>
+        <div class="switch theme-switch-m">
+          <label>
+            <i class="material-icons tiny">light_mode</i>
+            <input id="darkModeToggleMobile" type="checkbox" />
+            <span class="lever"></span>
+            <i class="material-icons tiny">dark_mode</i>
+          </label>
         </div>
-    </section>
+      </li>
+    </ul>
 
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Docker & Kubernetes</div>
-                <div class="skill-item">AWS & GCP</div>
-                <div class="skill-item">CI/CD Pipelines</div>
-                <div class="skill-item">Infrastructure as Code (Terraform)</div>
-                <div class="skill-item">Linux System Administration</div>
-                <div class="skill-item">Monitoring & Logging</div>
+    <!-- Hero -->
+    <header id="home" class="section hero indigo darken-4 white-text">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m10 l8">
+            <h1 class="hero-title">Transform your business with software and AI</h1>
+            <p class="flow-text">
+              I specialize in software project management and development, and AI‑powered automation. I work with companies of all sizes and industries, delivering solutions that optimize processes, improve customer experience, and elevate digital presence.
+            </p>
+            <div class="hero-ctas">
+              <a href="#contacto" class="btn-large waves-effect waves-light indigo lighten-1">
+                <i class="material-icons left">handshake</i> Let’s work together
+              </a>
+              <a href="#proyectos" class="btn-large waves-effect white indigo-text text-darken-4">
+                <i class="material-icons left">work</i> View projects
+              </a>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </header>
 
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Cloud Deployment Automation</h3>
-                    <p>Developed automated workflows for deploying multi-cloud environments using Terraform and CI/CD pipelines.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Monitoring & Alerting System</h3>
-                    <p>Implemented robust monitoring systems integrating Grafana, Prometheus, and custom alerting scripts.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Containerized Applications</h3>
-                    <p>Led the migration of monolithic applications to containerized microservices architecture with Docker and Kubernetes.</p>
-                </div>
+    <!-- Servicios -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">
+          Custom application development, platform integrations, AI implementations for automation and intelligent assistants, and AI‑generated content. I also provide cloud support, digital campaigns, and end‑to‑end technology consulting.
+        </p>
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="material-icons left">apps</i>Development</span>
+                <p>Custom web and mobile apps focused on performance, scalability, and user experience.</p>
+              </div>
             </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="material-icons left">hub</i>Integrations</span>
+                <p>Connect your systems and data: CRMs, ERPs, payments, analytics, and seamless automations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="material-icons left">smart_toy</i>AI & Automation</span>
+                <p>Intelligent assistants, RAG, agents, workflows, and copilots to accelerate your processes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="material-icons left">campaign</i>AI Content</span>
+                <p>Content generation for marketing and communication aligned with your brand and goals.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="material-icons left">cloud</i>Cloud</span>
+                <p>AWS, Azure, and Google Cloud: architecture, deployments, observability, and cost optimization.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="material-icons left">insights</i>Marketing & Consulting</span>
+                <p>SEO, SEM, social media, and technology consulting to amplify your digital presence.</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>If you'd like to connect or discuss a project, feel free to reach out:</p>
-            <ul class="contact-list">
-                <li>Email: <a href="mailto:oslanevillalobos@gmail.com">oslanevillalobos@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/oslan-villalobos/" target="_blank">Oslan Villalobos</a></li>
-                <li>GitHub: <a href="https://github.com/Oslan17" target="_blank">github.com/Oslan17</a></li>
+    <!-- Proyectos -->
+    <section id="proyectos" class="section grey lighten-4">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80&auto=format&fit=crop" alt="Project 1" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">AI Automation</span>
+                <p>Intelligent assistant for customer support, integrations, and context‑aware responses.</p>
+              </div>
+              <div class="card-action">
+                <a href="https://github.com/" target="_blank" rel="noopener">Repository</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80&auto=format&fit=crop" alt="Project 2" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">SaaS Platform</span>
+                <p>Full‑stack development focused on onboarding, billing, and product analytics.</p>
+              </div>
+              <div class="card-action">
+                <a href="https://github.com/" target="_blank" rel="noopener">Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="acerca" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m7">
+            <h2 class="section-title">About me</h2>
+            <p class="flow-text">
+              I help organizations with their digital transformation through scalable, efficient, and innovative solutions. I design and implement strategies that connect business and technology to deliver fast, measurable value.
+            </p>
+            <ul class="collection">
+              <li class="collection-item"><i class="material-icons left">check_circle</i> End‑to‑end project management</li>
+              <li class="collection-item"><i class="material-icons left">check_circle</i> Applied AI for processes and products</li>
+              <li class="collection-item"><i class="material-icons left">check_circle</i> Integrations and data‑driven decisions</li>
+              <li class="collection-item"><i class="material-icons left">check_circle</i> Cloud, security, and performance</li>
             </ul>
+          </div>
+          <div class="col s12 m5">
+            <div class="card center hoverable profile-card">
+              <div class="card-content">
+                <img class="circle responsive-img profile-img" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300&q=80&auto=format&fit=crop" alt="Profile" />
+                <h5>Your Name</h5>
+                <p class="grey-text">Consultant in Software, AI, and Digital Transformation</p>
+                <div class="chip">AWS</div>
+                <div class="chip">Azure</div>
+                <div class="chip">Google Cloud</div>
+                <div class="chip">MLOps</div>
+              </div>
+              <div class="card-action">
+                <a href="#contacto">Availability</a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2024 Oslan Villalobos. All rights reserved.</p>
+    <!-- Contact -->
+    <section id="contacto" class="section indigo darken-4 white-text">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle white-text">
+          Ready to start? Book a call or send me a message.
+        </p>
+        <div class="row">
+          <form class="col s12 m8" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <div class="input-field">
+              <i class="material-icons prefix">person</i>
+              <input id="nombre" name="nombre" type="text" class="white-text" required />
+              <label for="nombre">Name</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+              <input id="email" name="email" type="email" class="white-text" required />
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">message</i>
+              <textarea id="mensaje" name="mensaje" class="materialize-textarea white-text" required></textarea>
+              <label for="mensaje">Message</label>
+            </div>
+            <button class="btn-large indigo lighten-1 waves-effect waves-light" type="submit">
+              Send
+            </button>
+            <a class="btn-large white indigo-text text-darken-4 waves-effect" href="https://wa.me/" target="_blank" rel="noopener">
+              <i class="material-icons left">chat</i> WhatsApp
+            </a>
+          </form>
+          <div class="col s12 m4">
+            <ul class="collection with-header indigo darken-4">
+              <li class="collection-header"><h5 class="white-text">Information</h5></li>
+              <li class="collection-item indigo darken-3 white-text">Availability: Open to projects</li>
+              <li class="collection-item indigo darken-3 white-text">Location: Remote / Global</li>
+              <li class="collection-item indigo darken-3 white-text">Languages: Spanish, English</li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer indigo darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6">
+            <h5 class="white-text">OslanV</h5>
+            <p class="grey-text text-lighten-4">Software and AI solutions to accelerate your digital transformation.</p>
+          </div>
+          <div class="col s12 m6">
+            <h5 class="white-text">Follow me</h5>
+            <a class="btn-floating waves-effect indigo lighten-1" href="https://github.com/" target="_blank" rel="noopener"><i class="material-icons">code</i></a>
+            <a class="btn-floating waves-effect indigo lighten-1" href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="material-icons">work</i></a>
+            <a class="btn-floating waves-effect indigo lighten-1" href="https://x.com/" target="_blank" rel="noopener"><i class="material-icons">public</i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © <span id="year"></span> OslanV — All rights reserved
+        </div>
+      </div>
     </footer>
-</body>
-</html>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
