@@ -5,6 +5,13 @@
   --accent-ink: #003b33;
   --text-on-dark: #e6ecf7;
   --hero-overlay: linear-gradient(180deg, rgba(3,8,24,.5), rgba(3,8,24,.7));
+  /* Modern gradient system */
+  --grad-a: #7c3aed; /* violet */
+  --grad-b: #06b6d4; /* cyan */
+  --grad-c: #22d3ee; /* sky */
+  --grad-d: #a78bfa; /* purple */
+  --ring-outer: rgba(124,58,237,.35);
+  --ring-inner: rgba(34,211,238,.25);
 }
 
 html, body {
@@ -13,7 +20,6 @@ html, body {
 }
 
 .hero {
-  background: var(--hero-overlay), url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
   padding: 7rem 0 5rem;
   box-shadow: inset 0 -1px 0 rgba(255,255,255,0.06);
 }
@@ -320,5 +326,157 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
 .footer-copyright .container {
   color: rgba(224,230,240,0.7);
   font-size: 0.9rem;
+}
+
+/* ========================= */
+/* Modern Cursor-like theme  */
+/* ========================= */
+
+/* Aurora hero variant */
+.hero.modern-aurora {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(124,58,237,.16), rgba(124,58,237,0) 60%),
+              radial-gradient(900px 700px at 110% 10%, rgba(6,182,212,.16), rgba(6,182,212,0) 60%),
+              linear-gradient(180deg, rgba(7,11,26,1) 0%, rgba(10,16,33,1) 60%, rgba(12,19,49,1) 100%);
+}
+
+.hero.modern-aurora::before,
+.hero.modern-aurora::after {
+  content: "";
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  min-width: 540px;
+  min-height: 540px;
+  filter: blur(48px) saturate(140%);
+  opacity: .5;
+  pointer-events: none;
+}
+
+.hero.modern-aurora::before {
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(40% 40% at 50% 50%, rgba(124,58,237,.55), rgba(124,58,237,0) 70%),
+              radial-gradient(30% 30% at 70% 30%, rgba(6,182,212,.45), rgba(6,182,212,0) 70%);
+  animation: float-1 18s ease-in-out infinite alternate;
+}
+
+.hero.modern-aurora::after {
+  bottom: -25%;
+  right: -15%;
+  background: radial-gradient(35% 35% at 40% 60%, rgba(167,139,250,.5), rgba(167,139,250,0) 70%),
+              radial-gradient(30% 30% at 30% 30%, rgba(34,211,238,.45), rgba(34,211,238,0) 70%);
+  animation: float-2 22s ease-in-out infinite alternate;
+}
+
+@keyframes float-1 {
+  0% { transform: translate3d(0,0,0) rotate(0deg); }
+  100% { transform: translate3d(6%, -3%, 0) rotate(8deg); }
+}
+
+@keyframes float-2 {
+  0% { transform: translate3d(0,0,0) rotate(0deg); }
+  100% { transform: translate3d(-6%, 4%, 0) rotate(-8deg); }
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b), var(--grad-c), var(--grad-d));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hue-shift 14s ease infinite;
+}
+
+@keyframes hue-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* CTA buttons */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b), var(--grad-c));
+  color: #05101f !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(34,211,238,.18), inset 0 1px 0 rgba(255,255,255,.35);
+}
+
+.btn-gradient:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.btn-gradient:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: rgba(255,255,255,0.06) !important;
+  color: var(--text-on-dark) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.btn-ghost:hover { background: rgba(255,255,255,0.1) !important; }
+
+/* Feature cards: gradient ring on hover */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, var(--ring-outer), var(--ring-inner));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.feature-card:hover::after { opacity: 1; }
+
+/* Section spacing tweaks for modern rhythm */
+.section { padding-top: 5rem; padding-bottom: 4rem; }
+
+/* Reduce motion for people who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; }
+  .gradient-text { animation: none; }
+  .hero.modern-aurora::before,
+  .hero.modern-aurora::after { animation: none; }
+}
+
+/* Cloud logo strip */
+.logo-strip {
+  padding: 1.5rem 0 2rem;
+  text-align: center;
+}
+.logo-strip .logo-title {
+  display: block;
+  font-size: 0.95rem;
+  opacity: .75;
+  margin-bottom: .5rem;
+}
+.logo-strip .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.logo-strip img {
+  height: 34px;
+  filter: grayscale(1) contrast(1.1) brightness(.92);
+  opacity: .9;
+  transition: filter .25s ease, opacity .25s ease, transform .25s ease;
+}
+.logo-strip img:hover {
+  filter: grayscale(0) contrast(1.05) brightness(1);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
