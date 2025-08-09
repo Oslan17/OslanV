@@ -109,7 +109,7 @@ const TRANSLATIONS = {
       tagline: 'Software and AI solutions to accelerate your digital transformation.',
       rights: 'All rights reserved'
     },
-    logos: { title: 'Cloud platforms' }
+    logos: { title: 'I work with' }
   },
   es: {
     nav: { services: 'Servicios', projects: 'Proyectos', about: 'Acerca', contact: 'Contacto' },
@@ -162,7 +162,7 @@ const TRANSLATIONS = {
       tagline: 'Soluciones de software e IA para acelerar tu transformación digital.',
       rights: 'Todos los derechos reservados'
     },
-    logos: { title: 'Plataformas en la nube' }
+    logos: { title: 'Trabajo con' }
   }
 };
 
