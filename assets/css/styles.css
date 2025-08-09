@@ -284,9 +284,12 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
 
 .contact-actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-  align-items: stretch;
+  grid-template-columns: 1.2fr .8fr; /* email wider, icons narrower */
+  gap: 14px;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .contact-actions { grid-template-columns: 1fr; }
 }
 
 .contact-actions .btn-large {
@@ -527,7 +530,7 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
 }
 
 /* Compact social icons row inside contact actions */
-.social-compact { display: inline-flex; gap: 10px; vertical-align: middle; }
+.social-compact { display: inline-flex; gap: 10px; vertical-align: middle; justify-self: start; }
 .social-compact .btn-floating { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 .social-compact .brand-icon { width: 20px; height: 20px; margin: 0; }
 

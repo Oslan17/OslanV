@@ -167,19 +167,20 @@ const TRANSLATIONS = {
 };
 
 function setupEmailCopy() {
-  const btn = document.getElementById('emailCopyBtn');
-  if (!btn) return;
-  const email = btn.getAttribute('data-email');
-  btn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    try {
-      await navigator.clipboard.writeText(email);
-      const toast = `Email copied: ${email}`;
-      M.toast({ html: toast });
-    } catch (err) {
-      // Fallback: open mailto
-      window.location.href = `mailto:${email}`;
-    }
+  const buttons = document.querySelectorAll('.js-email-copy');
+  if (!buttons.length) return;
+  buttons.forEach((btn) => {
+    const email = btn.getAttribute('data-email') || btn.textContent.trim();
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      try {
+        await navigator.clipboard.writeText(email);
+        const toast = `Email copied: ${email}`;
+        M.toast({ html: toast });
+      } catch (err) {
+        window.location.href = `mailto:${email}`;
+      }
+    });
   });
 }
 
