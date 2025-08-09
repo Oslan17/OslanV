@@ -256,6 +256,10 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
 #langToggleBtnMobile { color: var(--text-on-dark) !important; }
 #langToggleBtnMobile .material-icons { color: currentColor !important; }
 
+/* Contact buttons: align icons/text neatly */
+.contact-actions .btn-large .material-icons.left { margin-right: 10px; line-height: inherit; }
+.contact-actions .btn-large { display: inline-flex; align-items: center; justify-content: center; }
+
 /* Override Materialize button styles */
 .btn-brand.brand-linkedin, .btn-brand.brand-github, .btn-brand.brand-x {
   color: #fff !important;
@@ -492,12 +496,7 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
   padding: 1.5rem 0 2rem;
   text-align: center;
 }
-.logo-strip .logo-title {
-  display: block;
-  font-size: 0.95rem;
-  opacity: .75;
-  margin-bottom: .5rem;
-}
+.logo-strip .logo-title { display: none; }
 .logo-strip .logos {
   display: flex;
   justify-content: center;
