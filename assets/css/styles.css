@@ -551,3 +551,13 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
 .icon-link i.material-icons { font-size: 20px; line-height: 20px; }
 .icon-link:hover { background: rgba(255,255,255,0.1); }
 
+/* ========================= */
+/* Services layout fixes     */
+/* ========================= */
+#servicios .row { align-items: stretch; }
+#servicios .col { display: flex; }
+#servicios .card { display: flex; flex-direction: column; width: 100%; }
+#servicios .card-content { flex: 1 1 auto; }
+#servicios .card .card-title { display: flex; align-items: center; gap: 8px; }
+#servicios .card .card-title .material-icons.left { margin-right: 8px; }
+
