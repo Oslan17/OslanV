@@ -243,15 +243,16 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
   background: rgba(255,255,255,0.10) !important;
   border: 1px solid rgba(255,255,255,0.22) !important;
   border-radius: 999px !important;
-  padding: 6px 10px !important;
-  height: 36px !important;
+  padding: 4px 10px !important;
+  height: 32px !important;
   line-height: 24px !important;
   display: inline-flex !important;
   align-items: center;
   gap: 6px;
 }
 #langToggleBtn:hover { background: rgba(255,255,255,0.16) !important; }
-#langToggleBtn .material-icons { color: currentColor !important; }
+#langToggleBtn .material-icons { color: currentColor !important; margin: 0 4px 0 0; line-height: 1; }
+#langToggleBtn #langToggleLabel { display: inline-block; line-height: 1; position: relative; top: 0; }
 
 #langToggleBtnMobile { color: var(--text-on-dark) !important; }
 #langToggleBtnMobile .material-icons { color: currentColor !important; }
@@ -259,6 +260,17 @@ body.dark .btn-brand { color: #ffffff !important; background: #000000 !important
 /* Contact buttons: align icons/text neatly */
 .contact-actions .btn-large .material-icons.left { margin-right: 10px; line-height: inherit; }
 .contact-actions .btn-large { display: inline-flex; align-items: center; justify-content: center; }
+
+/* Email button style (smaller + theme aligned) */
+.btn.btn-email {
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b)) !important;
+  color: #05101f !important;
+  border: none !important;
+  box-shadow: 0 8px 22px rgba(34,211,238,.18), inset 0 1px 0 rgba(255,255,255,.35);
+  border-radius: 10px;
+}
+.btn.btn-email .material-icons { color: #05101f !important; }
+.btn.btn-email:hover { filter: brightness(1.05); }
 
 /* Override Materialize button styles */
 .btn-brand.brand-linkedin, .btn-brand.brand-github, .btn-brand.brand-x {
