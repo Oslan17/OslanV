@@ -75,7 +75,7 @@ const TRANSLATIONS = {
       title: 'Services',
       subtitle: 'Custom application development, platform integrations, AI implementations for automation and intelligent assistants, and AI‑generated content. I also provide cloud support, digital campaigns, and end‑to‑end technology consulting.',
       cards: {
-        dev: { title: 'Development', desc: 'Custom web and mobile apps focused on performance, scalability, and user experience.' },
+        dev: { title: 'Cloud & DevOps', desc: 'Cloud-native backends, CI/CD, IaC, containers, and reliable operations.' },
         int: { title: 'Integrations', desc: 'Connect your systems and data: CRMs, ERPs, payments, analytics, and seamless automations.' },
         ai: { title: 'AI & Automation', desc: 'Intelligent assistants, RAG, agents, workflows, and copilots to accelerate your processes.' },
         content: { title: 'AI Content', desc: 'Content generation for marketing and communication aligned with your brand and goals.' },
@@ -128,7 +128,7 @@ const TRANSLATIONS = {
       title: 'Servicios',
       subtitle: 'Desarrollo a medida, integraciones de plataformas, implementaciones de IA para automatización y asistentes inteligentes, y contenido generado con IA. También brindo soporte cloud, campañas digitales y consultoría end‑to‑end.',
       cards: {
-        dev: { title: 'Desarrollo', desc: 'Aplicaciones web y móviles enfocadas en rendimiento, escalabilidad y UX.' },
+        dev: { title: 'Cloud y DevOps', desc: 'Backends cloud‑native, CI/CD, IaC, contenedores y operaciones confiables.' },
         int: { title: 'Integraciones', desc: 'Conecta tus sistemas y datos: CRMs, ERPs, pagos, analítica y automatizaciones.' },
         ai: { title: 'IA y Automatización', desc: 'Asistentes inteligentes, RAG, agentes, flujos y copilotos para acelerar procesos.' },
         content: { title: 'Contenido con IA', desc: 'Generación de contenido para marketing y comunicación alineado a tu marca y objetivos.' },
@@ -167,19 +167,20 @@ const TRANSLATIONS = {
 };
 
 function setupEmailCopy() {
-  const btn = document.getElementById('emailCopyBtn');
-  if (!btn) return;
-  const email = btn.getAttribute('data-email');
-  btn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    try {
-      await navigator.clipboard.writeText(email);
-      const toast = `Email copied: ${email}`;
-      M.toast({ html: toast });
-    } catch (err) {
-      // Fallback: open mailto
-      window.location.href = `mailto:${email}`;
-    }
+  const buttons = document.querySelectorAll('.js-email-copy');
+  if (!buttons.length) return;
+  buttons.forEach((btn) => {
+    const email = btn.getAttribute('data-email') || btn.textContent.trim();
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      try {
+        await navigator.clipboard.writeText(email);
+        const toast = `Email copied: ${email}`;
+        M.toast({ html: toast });
+      } catch (err) {
+        window.location.href = `mailto:${email}`;
+      }
+    });
   });
 }
 
