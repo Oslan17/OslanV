@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: OslanV
+  annotations:
+    github.com/project-slug: Oslan17/OslanV
+spec:
+  type: other
+  lifecycle: unknown
+  owner: owner
