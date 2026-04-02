@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "eks-fargate-migration",
+    "title": "Migrating EKS from Fargate to EC2 Node Groups: A 4-Phase Approach",
+    "date": "2025-03-18",
+    "cat": "k8s",
+    "excerpt": "Why Fargate wasn't enough for our production workloads, and how we planned a safe, zero-downtime migration with security group considerations for RDS, ElastiCache, and MSK."
+  },
+  {
+    "slug": "aws-cost-reports",
+    "title": "Building Multi-Account AWS Cost Reports with Python & ReportLab",
+    "date": "2025-03-12",
+    "cat": "aws",
+    "excerpt": "How I automated PDF cost reports for production and dev AWS accounts — covering EKS optimization events, partial-month highlighting, and corporate brand theming."
+  },
+  {
+    "slug": "graviton-migration",
+    "title": "Graviton Migration on EKS & RDS: What You Actually Save",
+    "date": "2025-02-28",
+    "cat": "aws",
+    "excerpt": "A breakdown of our Graviton evaluation: ~10% RDS savings, ~40% EC2 price-performance gains, and how to use Compute Optimizer + Karpenter to automate node pool selection."
+  },
+  {
+    "slug": "terraform-target",
+    "title": "Terraform -target: When to Use It (and When to Run Away)",
+    "date": "2025-02-15",
+    "cat": "iac",
+    "excerpt": "Real-world cases where -target saved production deploys — OIDC providers vs Route53 records — and the pitfalls of partial state drifts that haunt you later."
+  },
+  {
+    "slug": "kubernetes-rca",
+    "title": "Kubernetes RCA Practice: Sidecar CPU Spike & Liveness Probe Loop",
+    "date": "2025-02-05",
+    "cat": "sre",
+    "excerpt": "A war-room style post-mortem on a simulated flash sale outage — sidecar CPU exhaustion triggering liveness probe failures and cascading pod restarts under load."
+  },
+  {
+    "slug": "popos-dual-boot",
+    "title": "Pop!_OS + Windows Dual Boot on ASUS ROG Zephyrus G14",
+    "date": "2025-01-22",
+    "cat": "linux",
+    "excerpt": "Step-by-step: custom EFI partition, systemd-boot with Windows default, and compiling asusctl/supergfxctl from source to get the RTX 4060 hybrid graphics working properly."
+  }
+]
