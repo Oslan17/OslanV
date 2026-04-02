@@ -2,11 +2,32 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  setupTheme();
   setupHamburgerMenu();
   setupEmailCopy();
   setupScrollReveal();
   setupI18n();
 });
+
+// ── THEME TOGGLE ──
+function setupTheme() {
+  const stored = localStorage.getItem('theme');
+  applyTheme(stored === 'paper' ? 'paper' : 'dark');
+  document.querySelectorAll('.js-theme-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark' ? 'paper' : 'dark';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    });
+  });
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  document.querySelectorAll('.js-theme-toggle').forEach(btn => {
+    btn.textContent = theme === 'dark' ? 'paper' : 'dark';
+  });
+}
 
 // ── HAMBURGER MENU ──
 function setupHamburgerMenu() {

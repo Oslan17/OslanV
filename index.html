@@ -13,7 +13,10 @@
   <meta property="og:url" content="https://www.oslan.cloud/" />
   <link rel="canonical" href="https://www.oslan.cloud/" />
 
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0e14'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20'%3E🚀%3C/text%3E%3C/svg%3E" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <!-- Prevent flash of wrong theme -->
+  <script>(function(){const t=localStorage.getItem('theme');if(t==='paper')document.documentElement.setAttribute('data-theme','paper');})()</script>
   <style>
     :root {
       --bg: #0b0e14;
@@ -26,6 +29,33 @@
       --text: #e2e8f0;
       --muted: #64748b;
       --tag-bg: #1a2235;
+    }
+
+    /* ── PAPER THEME ── */
+    :root[data-theme="paper"] {
+      --bg: #f7f3ed;
+      --bg2: #ede9e0;
+      --surface: #e8e3d8;
+      --border: #ccc8be;
+      --accent: #1d4ed8;
+      --accent2: #6d3fa6;
+      --accent3: #1a7a4a;
+      --text: #1a1814;
+      --muted: #7a7570;
+      --tag-bg: #ddd8ce;
+    }
+    [data-theme="paper"] body::after {
+      background-image:
+        linear-gradient(rgba(26,24,20,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,24,20,0.04) 1px, transparent 1px);
+    }
+    [data-theme="paper"] nav { background: rgba(247,243,237,0.9); }
+    [data-theme="paper"] .mobile-menu { background: rgba(247,243,237,0.97); }
+    [data-theme="paper"] .logos-strip img { filter: grayscale(1) brightness(0.5); opacity: 0.5; }
+    [data-theme="paper"] .status-dot { animation: pulse-paper 2s ease-in-out infinite; }
+    @keyframes pulse-paper {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(26,122,74,0.4); }
+      50%       { box-shadow: 0 0 0 6px rgba(26,122,74,0); }
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -112,6 +142,19 @@
       transition: all 0.2s;
     }
     .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 3px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      transition: all 0.2s;
+    }
+    .theme-btn:hover { border-color: var(--accent2); color: var(--accent2); }
 
     /* ── HAMBURGER ── */
     .nav-hamburger {
@@ -568,6 +611,7 @@
     <a href="#contact" data-i18n="nav.contact">Contact</a>
     <a href="blog.html" data-i18n="nav.blog">Blog</a>
     <button class="lang-btn" id="langToggleBtnMobile"><span id="langToggleLabelMobile">ES</span></button>
+    <button class="theme-btn js-theme-toggle">paper</button>
   </div>
 
   <!-- NAV -->
@@ -580,6 +624,7 @@
       <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
       <li><button class="lang-btn" id="langToggleBtn"><span id="langToggleLabel">ES</span></button></li>
+      <li><button class="theme-btn js-theme-toggle" id="themeToggle">paper</button></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>

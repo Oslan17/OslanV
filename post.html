@@ -4,14 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Post — Oslan Villalobos</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0e14'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20'%3E🚀%3C/text%3E%3C/svg%3E" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script>(function(){const t=localStorage.getItem('theme');if(t==='paper')document.documentElement.setAttribute('data-theme','paper');})()</script>
   <style>
     :root {
       --bg: #0b0e14; --bg2: #111520; --surface: #161b27;
       --border: #1e2535; --accent: #00d4ff; --accent2: #7c6cfa;
       --accent3: #00ff9d; --text: #e2e8f0; --muted: #64748b;
     }
+    :root[data-theme="paper"] {
+      --bg: #f7f3ed; --bg2: #ede9e0; --surface: #e8e3d8;
+      --border: #ccc8be; --accent: #1d4ed8; --accent2: #6d3fa6;
+      --accent3: #1a7a4a; --text: #1a1814; --muted: #7a7570;
+    }
+    [data-theme="paper"] body::after {
+      background-image: linear-gradient(rgba(26,24,20,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(26,24,20,0.04) 1px, transparent 1px);
+    }
+    [data-theme="paper"] nav { background: rgba(247,243,237,0.9); }
+    [data-theme="paper"] .post-body { color: #3a3530; }
+    .theme-btn { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 0.25rem 0.65rem; border-radius: 3px; cursor: pointer; letter-spacing: 0.08em; transition: all 0.2s; }
+    .theme-btn:hover { border-color: var(--accent2); color: var(--accent2); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
@@ -137,6 +151,7 @@
   <nav>
     <a href="index.html" class="nav-logo">oslan<span>.dev</span></a>
     <a href="blog.html" class="back-link">← Back to blog</a>
+    <button class="theme-btn js-theme-toggle" id="themeToggle">paper</button>
   </nav>
 
   <div class="post-wrapper">
@@ -163,6 +178,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    (function() {
+      function applyTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        document.querySelectorAll('.js-theme-toggle').forEach(b => b.textContent = t === 'dark' ? 'paper' : 'dark');
+      }
+      applyTheme(localStorage.getItem('theme') === 'paper' ? 'paper' : 'dark');
+      document.querySelectorAll('.js-theme-toggle').forEach(btn => btn.addEventListener('click', () => {
+        const next = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark' ? 'paper' : 'dark';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+      }));
+    })();
 
     const catClass = { aws: 'cat-aws', k8s: 'cat-k8s', iac: 'cat-iac', sre: 'cat-sre', linux: 'cat-linux' };
     const catLabel = { aws: 'AWS', k8s: 'Kubernetes', iac: 'IaC', sre: 'SRE', linux: 'Linux' };
