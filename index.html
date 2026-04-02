@@ -1,286 +1,963 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0c1331" />
-    <title>Oslan Villalobos — Software & AI Consulting</title>
-    <meta name="description" content="Software & AI consultant. Apps, integrations, AI automation, and cloud to scale your digital business." />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0e14" />
+  <title>Oslan Villalobos — Software & AI Consulting</title>
+  <meta name="description" content="Software & AI consultant. Apps, integrations, AI automation, and cloud to scale your digital business." />
 
-    <!-- Open Graph -->
-    <meta property="og:site_name" content="OslanV" />
-    <meta property="og:title" content="Oslan Villalobos — Software & AI Consulting" />
-    <meta property="og:description" content="Apps, integrations, AI automation and cloud. Modern, scalable solutions for your business." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.oslan.cloud/" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80&auto=format&fit=crop" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Oslan Villalobos — Software & AI Consulting" />
-    <meta name="twitter:description" content="Apps, integrations, AI automation and cloud." />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80&auto=format&fit=crop" />
-    <link rel="canonical" href="https://www.oslan.cloud/" />
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="OslanV" />
+  <meta property="og:title" content="Oslan Villalobos — Software & AI Consulting" />
+  <meta property="og:description" content="Apps, integrations, AI automation and cloud. Modern, scalable solutions for your business." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.oslan.cloud/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.oslan.cloud/" />
 
-    <!-- Materialize CSS & Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <!-- Modern font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="assets/css/styles.css" rel="stylesheet" />
-  </head>
-  <body class="dark">
-    <!-- Navbar -->
-    <nav class="nav-extended transparent-nav" data-scrolled="false">
-      <div class="nav-wrapper container">
-        <a href="#home" class="brand-logo">OslanV</a>
-        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#servicios" data-i18n="nav.services">Services</a></li>
-          <li><a href="#proyectos" data-i18n="nav.projects">Projects</a></li>
-          <li><a href="#acerca" data-i18n="nav.about">About</a></li>
-          <li><a href="#contacto" class="btn-small indigo lighten-1 waves-effect waves-light" data-i18n="nav.contact">Contact</a></li>
-          <li>
-            <a href="#" id="langToggleBtn" class="btn-flat btn-icon waves-effect" aria-label="Toggle language">
-              <i class="material-icons left">translate</i>
-              <span id="langToggleLabel">ES</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --bg2: #111520;
+      --surface: #161b27;
+      --border: #1e2535;
+      --accent: #00d4ff;
+      --accent2: #7c6cfa;
+      --accent3: #00ff9d;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --tag-bg: #1a2235;
+    }
 
-    <ul class="sidenav" id="mobile-nav">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ── GRID LINES ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(11,14,20,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--muted); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .lang-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 3px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--muted);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(11,14,20,0.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.2rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu-close {
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      font-size: 1.4rem;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-inner { width: 100%; }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.2s;
+    }
+    .hero-eyebrow::before { content: '> '; color: var(--accent3); }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.35s;
+    }
+    h1 .name-accent {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.5s;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.65s;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      padding: 0.3rem 0.8rem;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.8s;
+    }
+
+    .btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      display: inline-block;
+    }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: #33ddff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,212,255,0.3); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); }
+
+    /* ── STATUS BADGE ── */
+    .status-badge {
+      position: absolute;
+      right: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 220px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 1s;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: var(--accent3);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .status-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent3);
+      letter-spacing: 0.08em;
+    }
+    .status-location {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+    .status-location strong { color: var(--text); display: block; }
+
+    /* ── SECTIONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent2);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── SERVICES GRID ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5px;
+      border: 1.5px solid var(--border);
+    }
+    .service-card {
+      background: var(--surface);
+      padding: 2rem;
+      border: 1.5px solid var(--border);
+      margin: -1.5px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 2px; width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 0.3s;
+    }
+    .service-card:hover::before { width: 100%; }
+    .service-card:hover { background: var(--bg2); transform: translateY(-2px); z-index: 2; box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+    .service-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .service-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .service-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── PROJECTS GRID ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5px;
+      border: 1.5px solid var(--border);
+    }
+    .project-card {
+      background: var(--surface);
+      padding: 2rem;
+      border: 1.5px solid var(--border);
+      margin: -1.5px;
+      transition: all 0.25s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 2px; width: 0;
+      background: linear-gradient(90deg, var(--accent2), var(--accent3));
+      transition: width 0.3s;
+    }
+    .project-card:hover::before { width: 100%; }
+    .project-card:hover { background: var(--bg2); transform: translateY(-2px); z-index: 2; box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+    .project-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .project-type {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      background: rgba(124,108,250,0.12);
+      color: var(--accent2);
+      border: 1px solid rgba(124,108,250,0.25);
+    }
+    .project-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+    .project-arrow {
+      position: absolute;
+      bottom: 1.5rem; right: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--border);
+      transition: all 0.2s;
+    }
+    .project-card:hover .project-arrow { color: var(--accent2); transform: translate(3px, -3px); }
+
+    /* ── STACK SECTION ── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .stack-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .stack-card:hover { border-color: var(--accent2); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(124,108,250,0.15); }
+    .stack-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .stack-name { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.25rem; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .skill-item::before { content: '▸'; color: var(--accent); font-size: 0.65rem; }
+
+    /* ── TERMINAL ── */
+    .terminal {
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: 'DM Mono', monospace;
+    }
+    .terminal-bar {
+      background: #161b22;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .term-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .td1 { background: #ff5f57; }
+    .td2 { background: #febc2e; }
+    .td3 { background: #28c840; }
+    .terminal-title { font-size: 0.7rem; color: var(--muted); margin-left: 0.5rem; letter-spacing: 0.05em; }
+    .terminal-body { padding: 1.5rem; font-size: 0.8rem; line-height: 2; }
+    .term-prompt { color: var(--accent3); }
+    .term-cmd { color: var(--text); }
+    .term-output { color: var(--muted); padding-left: 1rem; }
+    .term-key { color: var(--accent2); }
+    .term-val { color: var(--accent); }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.5rem; }
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent3);
+      border: 1px solid rgba(0,255,157,0.2);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      background: rgba(0,255,157,0.05);
+      margin-bottom: 1.5rem;
+    }
+    .contact-email {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(0,212,255,0.25);
+      padding: 0.75rem 1.25rem;
+      border-radius: 4px;
+      background: rgba(0,212,255,0.05);
+      transition: all 0.2s;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      justify-content: center;
+    }
+    .contact-email:hover { border-color: var(--accent); background: rgba(0,212,255,0.1); transform: translateY(-2px); }
+    .social-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .social-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .social-link:hover { border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); }
+
+    /* ── LOGOS ── */
+    .logos-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 3rem 4rem;
+    }
+    .logos-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .logos-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding: 1.75rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .logos-strip img {
+      opacity: 0.4;
+      filter: grayscale(1) brightness(2);
+      height: 26px;
+      width: auto;
+      transition: opacity 0.2s;
+    }
+    .logos-strip img:hover { opacity: 0.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-left { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--muted); }
+    .footer-left span { color: var(--accent); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── DIVIDER ── */
+    .divider { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+    .divider hr { border: none; border-top: 1px solid var(--border); }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent3);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 4px;
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,157,0.4); }
+      50%       { box-shadow: 0 0 0 6px rgba(0,255,157,0); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
+      .status-badge { display: none; }
+      section { padding: 3rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .logos-wrap { padding: 0 1.5rem 3rem; }
+      footer { flex-direction: column; gap: 1.25rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+    <a href="#servicios" data-i18n="nav.services">Services</a>
+    <a href="#proyectos" data-i18n="nav.projects">Projects</a>
+    <a href="#acerca" data-i18n="nav.about">About</a>
+    <a href="#contacto" data-i18n="nav.contact">Contact</a>
+    <button class="lang-btn" id="langToggleBtnMobile"><span id="langToggleLabelMobile">ES</span></button>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">oslan<span>.dev</span></a>
+    <ul class="nav-links">
       <li><a href="#servicios" data-i18n="nav.services">Services</a></li>
       <li><a href="#proyectos" data-i18n="nav.projects">Projects</a></li>
       <li><a href="#acerca" data-i18n="nav.about">About</a></li>
       <li><a href="#contacto" data-i18n="nav.contact">Contact</a></li>
-      <li><a href="#" id="langToggleBtnMobile"><i class="material-icons left">translate</i><span id="langToggleLabelMobile">ES</span></a></li>
+      <li><button class="lang-btn" id="langToggleBtn"><span id="langToggleLabel">ES</span></button></li>
     </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-    <!-- Hero -->
-    <header id="home" class="section hero modern-aurora white-text">
-      
-      <div class="container hero-grid">
-        <div class="hero-col reveal">
-          <div class="hero-badges">
-            <span class="chip chip-accent" data-i18n="hero.badge1">Software & AI</span>
-            <span class="chip chip-outline" data-i18n="hero.badge2">Cloud • Automation</span>
-          </div>
-          <h1 class="hero-title gradient-text" data-i18n="hero.title">Transform your business with software and AI</h1>
-          <p class="hero-subtitle" data-i18n="hero.subtitle">
-            I design, build and integrate modern solutions that automate workflows, improve customer experience, and scale your digital operations.
-          </p>
-          <div class="hero-ctas">
-            <a href="#contacto" class="btn-large waves-effect waves-dark btn-gradient">
-              <i class="material-icons left">handshake</i> <span data-i18n="hero.ctaPrimary">Let’s work together</span>
-            </a>
-            <a href="#proyectos" class="btn-large btn-ghost waves-effect">
-              <i class="material-icons left">work</i> <span data-i18n="hero.ctaSecondary">View projects</span>
-            </a>
-          </div>
-        </div>
-        <div class="hero-media reveal">
-          <div class="hero-card glass-card">
-            <span class="material-icons hero-card-icon">smart_toy</span>
-            <div class="hero-card-text">
-              <h6 data-i18n="hero.card1.title">AI Assistants</h6>
-              <p data-i18n="hero.card1.desc">RAG • Agents • Workflows</p>
-            </div>
-          </div>
-          <div class="hero-card glass-card">
-            <span class="material-icons hero-card-icon">hub</span>
-            <div class="hero-card-text">
-              <h6 data-i18n="hero.card2.title">Integrations</h6>
-              <p data-i18n="hero.card2.desc">CRMs • ERPs • Payments</p>
-            </div>
-          </div>
-          <div class="hero-card glass-card">
-            <span class="material-icons hero-card-icon">cloud</span>
-            <div class="hero-card-text">
-              <h6 data-i18n="hero.card3.title">Cloud</h6>
-              <p data-i18n="hero.card3.desc">AWS • Azure • GCP</p>
-            </div>
-          </div>
-        </div>
+  <!-- HERO -->
+  <div class="hero" id="home">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Software &amp; AI Consultant · Bogotá, Colombia</p>
+      <h1>
+        Oslan<br>
+        <span class="name-accent">Villalobos</span>
+      </h1>
+      <p class="hero-desc" data-i18n="hero.subtitle">
+        I design, build and integrate modern solutions that automate workflows, improve customer experience, and scale your digital operations.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">AWS · Cloud</span>
+        <span class="tag">AI Agents</span>
+        <span class="tag">n8n Automations</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">Python</span>
+        <span class="tag">Integrations</span>
+        <span class="tag">SRE</span>
       </div>
-    </header>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary" data-i18n="hero.ctaPrimary">Let's work together</a>
+        <a href="#proyectos" class="btn btn-outline" data-i18n="hero.ctaSecondary">View projects</a>
+      </div>
+    </div>
 
-    
+    <div class="status-badge">
+      <div><span class="status-dot"></span><span class="status-label">available</span></div>
+      <div class="status-location">
+        <strong>Oslan E. Villalobos</strong>
+        DevOps / SRE Engineer<br>
+        Bogotá, Colombia 🇨🇴<br>
+        <br>
+        <strong data-i18n="contact.open">Open to projects</strong>
+        Remote · Global<br>
+        Software &amp; AI Consulting
+      </div>
+    </div>
+  </div>
 
-    <!-- Servicios -->
-    <section id="servicios" class="section">
-      <div class="container">
-        <h2 class="section-title reveal" data-i18n="services.title">Services</h2>
-        <p class="section-subtitle reveal" data-i18n="services.subtitle">
-          Custom application development, platform integrations, AI implementations for automation and intelligent assistants, and AI‑generated content. I also provide cloud support, digital campaigns, and end‑to‑end technology consulting.
+  <!-- SERVICES -->
+  <section id="servicios">
+    <p class="section-label">// <span data-i18n="nav.services">services</span></p>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3 class="service-title" data-i18n="services.cards.dev.title">Cloud &amp; DevOps</h3>
+        <p class="service-desc" data-i18n="services.cards.dev.desc">Cloud-native backends, CI/CD, IaC, containers, and reliable operations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <h3 class="service-title" data-i18n="services.cards.int.title">Integrations</h3>
+        <p class="service-desc" data-i18n="services.cards.int.desc">Connect your systems and data: CRMs, ERPs, payments, analytics, and seamless automations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3 class="service-title" data-i18n="services.cards.ai.title">AI &amp; Automation</h3>
+        <p class="service-desc" data-i18n="services.cards.ai.desc">Intelligent assistants, RAG, agents, workflows, and copilots to accelerate your processes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✍️</div>
+        <h3 class="service-title" data-i18n="services.cards.content.title">AI Content</h3>
+        <p class="service-desc" data-i18n="services.cards.content.desc">Content generation for marketing and communication aligned with your brand and goals.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3 class="service-title" data-i18n="services.cards.cloud.title">Cloud</h3>
+        <p class="service-desc" data-i18n="services.cards.cloud.desc">AWS, Azure, and Google Cloud: architecture, deployments, observability, and cost optimization.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3 class="service-title">Observability</h3>
+        <p class="service-desc">Prometheus, Grafana, alerting pipelines, and SLO tracking to keep your systems reliable.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- PROJECTS -->
+  <section id="proyectos">
+    <p class="section-label">// <span data-i18n="nav.projects">projects</span></p>
+    <div class="projects-grid reveal">
+      <div class="project-card">
+        <div class="project-meta">
+          <span class="project-type">AI · Automation</span>
+        </div>
+        <h3 class="project-title" data-i18n="projects.card1.title">AI Automation</h3>
+        <p class="project-desc" data-i18n="projects.card1.desc">Intelligent assistant for customer support, integrations, and context-aware responses.</p>
+        <span class="project-arrow">↗</span>
+      </div>
+      <div class="project-card">
+        <div class="project-meta">
+          <span class="project-type" style="background:rgba(0,212,255,0.08);color:var(--accent);border-color:rgba(0,212,255,0.2)">SaaS · Full-Stack</span>
+        </div>
+        <h3 class="project-title" data-i18n="projects.card2.title">SaaS Platform</h3>
+        <p class="project-desc" data-i18n="projects.card2.desc">Full-stack development focused on onboarding, billing, and product analytics.</p>
+        <span class="project-arrow">↗</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- STACK -->
+  <section id="stack">
+    <p class="section-label">// tech stack</p>
+    <div class="stack-grid reveal">
+      <div class="stack-card"><div class="stack-icon">☁️</div><div class="stack-name">AWS (multi-account)</div></div>
+      <div class="stack-card"><div class="stack-icon">⚙️</div><div class="stack-name">Kubernetes / EKS</div></div>
+      <div class="stack-card"><div class="stack-icon">🏗️</div><div class="stack-name">Terraform</div></div>
+      <div class="stack-card"><div class="stack-icon">🐍</div><div class="stack-name">Python / boto3</div></div>
+      <div class="stack-card"><div class="stack-icon">🐘</div><div class="stack-name">PostgreSQL / RDS</div></div>
+      <div class="stack-card"><div class="stack-icon">📊</div><div class="stack-name">Prometheus / Grafana</div></div>
+      <div class="stack-card"><div class="stack-icon">🔁</div><div class="stack-name">n8n Automations</div></div>
+      <div class="stack-card"><div class="stack-icon">🐳</div><div class="stack-name">Docker</div></div>
+      <div class="stack-card"><div class="stack-icon">🤖</div><div class="stack-name">AI Agents / RAG</div></div>
+      <div class="stack-card"><div class="stack-icon">🔐</div><div class="stack-name">AWS IAM / Security</div></div>
+      <div class="stack-card"><div class="stack-icon">🚀</div><div class="stack-name">Helm / GitOps</div></div>
+      <div class="stack-card"><div class="stack-icon">🐧</div><div class="stack-name">Linux (Ubuntu/Pop!_OS)</div></div>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- ABOUT -->
+  <section id="acerca">
+    <p class="section-label">// <span data-i18n="nav.about">about</span></p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>Building things<br>that don't break.</h2>
+        <br>
+        <p>
+          I'm <strong>Oslan Enrique Villalobos</strong>, a DevOps &amp; SRE Engineer based in <strong>Bogotá, Colombia 🇨🇴</strong>.
+          I help organizations with their <strong>digital transformation</strong> through scalable, efficient, and innovative solutions.
         </p>
-        <div class="row">
-          <div class="col s12 m6 l4 reveal">
-            <div class="card hoverable glass-card">
-              <div class="card-content">
-                <span class="card-title"><i class="material-icons left">build_circle</i><span data-i18n="services.cards.dev.title">Cloud & DevOps</span></span>
-                <p data-i18n="services.cards.dev.desc">Cloud‑native backends, CI/CD, IaC, containers, and reliable operations.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l4 reveal">
-            <div class="card hoverable glass-card">
-              <div class="card-content">
-                <span class="card-title"><i class="material-icons left">hub</i><span data-i18n="services.cards.int.title">Integrations</span></span>
-                <p data-i18n="services.cards.int.desc">Connect your systems and data: CRMs, ERPs, payments, analytics, and seamless automations.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l4 reveal">
-            <div class="card hoverable glass-card">
-              <div class="card-content">
-                <span class="card-title"><i class="material-icons left">smart_toy</i><span data-i18n="services.cards.ai.title">AI & Automation</span></span>
-                <p data-i18n="services.cards.ai.desc">Intelligent assistants, RAG, agents, workflows, and copilots to accelerate your processes.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l4 reveal">
-            <div class="card hoverable glass-card">
-              <div class="card-content">
-                <span class="card-title"><i class="material-icons left">campaign</i><span data-i18n="services.cards.content.title">AI Content</span></span>
-                <p data-i18n="services.cards.content.desc">Content generation for marketing and communication aligned with your brand and goals.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l4 reveal">
-            <div class="card hoverable glass-card">
-              <div class="card-content">
-                <span class="card-title"><i class="material-icons left">cloud</i><span data-i18n="services.cards.cloud.title">Cloud</span></span>
-                <p data-i18n="services.cards.cloud.desc">AWS, Azure, and Google Cloud: architecture, deployments, observability, and cost optimization.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Proyectos -->
-    <section id="proyectos" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title reveal" data-i18n="projects.title">Projects</h2>
-        <div class="row">
-          <div class="col s12 m6 reveal">
-            <div class="card hoverable feature-card glass-card">
-              <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80&auto=format&fit=crop" alt="Project 1" />
-              </div>
-              <div class="card-content">
-                <span class="card-title" data-i18n="projects.card1.title">AI Automation</span>
-                <p data-i18n="projects.card1.desc">Intelligent assistant for customer support, integrations, and context‑aware responses.</p>
-              </div>
-              <div class="card-action">
-                <a href="https://github.com/" class="icon-link" target="_blank" rel="noopener" aria-label="Repository" title="Open repository">
-                  <i class="material-icons">open_in_new</i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 reveal">
-            <div class="card hoverable feature-card glass-card">
-              <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop" alt="Project 2" />
-              </div>
-              <div class="card-content">
-                <span class="card-title" data-i18n="projects.card2.title">SaaS Platform</span>
-                <p data-i18n="projects.card2.desc">Full‑stack development focused on onboarding, billing, and product analytics.</p>
-              </div>
-              <div class="card-action">
-                <a href="https://github.com/" class="icon-link" target="_blank" rel="noopener" aria-label="Repository" title="Open repository">
-                  <i class="material-icons">open_in_new</i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="acerca" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 reveal">
-            <h2 class="section-title" data-i18n="about.title">About me</h2>
-            <p class="flow-text" data-i18n="about.description">
-              I help organizations with their digital transformation through scalable, efficient, and innovative solutions. I design and implement strategies that connect business and technology to deliver fast, measurable value.
-            </p>
-            <ul class="collection">
-              <li class="collection-item"><i class="material-icons left">check_circle</i> <span data-i18n="about.list1">End‑to‑end project management</span></li>
-              <li class="collection-item"><i class="material-icons left">check_circle</i> <span data-i18n="about.list2">Applied AI for processes and products</span></li>
-              <li class="collection-item"><i class="material-icons left">check_circle</i> <span data-i18n="about.list3">Integrations and data‑driven decisions</span></li>
-              <li class="collection-item"><i class="material-icons left">check_circle</i> <span data-i18n="about.list4">Cloud, security, and performance</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cloud platforms logos (above Contact) -->
-    <section class="section section-alt">
-      <div class="container logo-strip reveal" aria-label="Cloud platforms">
-        <h2 class="section-title" data-i18n="logos.title">I work with</h2>
-        <div class="logos">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud" width="140" height="34" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services" width="140" height="34" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Microsoft Azure" width="140" height="34" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contacto" class="section contact-section white-text">
-      <div class="container">
-        <h2 class="section-title reveal" data-i18n="contact.title">Contact</h2>
-        <p class="section-subtitle white-text reveal" data-i18n="contact.subtitle">
-          Ready to start? Book a call or send me a message.
+        <p>
+          I design and implement strategies that connect business and technology —
+          cloud infrastructure, AI automations, integrations, and platform engineering that deliver fast, measurable value.
         </p>
-        <div class="row">
-          <div class="col s12 m12 contact-actions reveal">
-            <a id="emailCopyBtn" href="#" class="btn btn-email js-email-copy waves-effect" data-email="oslanevillalobos@yahoo.com">
-              <i class="material-icons left">alternate_email</i>
-              oslanevillalobos@yahoo.com
-            </a>
-            <div class="social-compact">
-              <a class="btn-floating btn-large waves-effect brand-linkedin" href="https://www.linkedin.com/in/oslan-villalobos-51287b116/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <span class="brand-icon si-linkedin"></span>
-              </a>
-              <a class="btn-floating btn-large waves-effect brand-github" href="https://github.com/Oslan17" target="_blank" rel="noopener" aria-label="GitHub">
-                <span class="brand-icon si-github"></span>
-              </a>
-              <a class="btn-floating btn-large waves-effect brand-x" href="https://x.com/oslan_evp" target="_blank" rel="noopener" aria-label="X">
-                <span class="brand-icon si-x"></span>
-              </a>
-            </div>
-          </div>
+        <p>
+          Outside work I'm exploring <strong>Graviton/ARM migration</strong>, learning English,
+          and fighting for democracy in Helldivers 2 🪖
+        </p>
+        <br>
+        <h3 style="font-family:'Syne',sans-serif; font-size:1rem; font-weight:600; margin-bottom:1rem; color:var(--text);">Core skills</h3>
+        <div class="skills-list">
+          <span class="skill-item">AWS EKS / EC2 / RDS</span>
+          <span class="skill-item">Terraform / IaC</span>
+          <span class="skill-item">Kubernetes Ops</span>
+          <span class="skill-item">Python / boto3</span>
+          <span class="skill-item">AI Agents / RAG</span>
+          <span class="skill-item">n8n Automations</span>
+          <span class="skill-item">Prometheus / Grafana</span>
+          <span class="skill-item">SRE / Incident Mgmt</span>
         </div>
       </div>
-    </section>
 
-
-    <!-- Footer -->
-    <footer class="page-footer indigo darken-4">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m6">
-            <h5 class="white-text">OslanV</h5>
-            <p class="grey-text text-lighten-4" data-i18n="footer.tagline">Software and AI solutions to accelerate your digital transformation.</p>
-          </div>
-          <div class="col s12 m6"></div>
+      <div class="terminal reveal">
+        <div class="terminal-bar">
+          <div class="term-dot td1"></div>
+          <div class="term-dot td2"></div>
+          <div class="term-dot td3"></div>
+          <span class="terminal-title">oslan@consulting ~ whois</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="term-prompt">$ </span><span class="term-cmd">cat about.json</span></div>
+          <div class="term-output">{</div>
+          <div class="term-output">&nbsp;&nbsp;<span class="term-key">"name"</span>: <span class="term-val">"Oslan E. Villalobos"</span>,</div>
+          <div class="term-output">&nbsp;&nbsp;<span class="term-key">"role"</span>: <span class="term-val">"DevOps / SRE Engineer"</span>,</div>
+          <div class="term-output">&nbsp;&nbsp;<span class="term-key">"location"</span>: <span class="term-val">"Bogotá, Colombia 🇨🇴"</span>,</div>
+          <div class="term-output">&nbsp;&nbsp;<span class="term-key">"services"</span>: [</div>
+          <div class="term-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="term-val">"Cloud &amp; DevOps"</span>,</div>
+          <div class="term-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="term-val">"AI &amp; Automation"</span>,</div>
+          <div class="term-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="term-val">"Integrations"</span></div>
+          <div class="term-output">&nbsp;&nbsp;],</div>
+          <div class="term-output">&nbsp;&nbsp;<span class="term-key">"availability"</span>: <span class="term-val">"open_to_projects"</span>,</div>
+          <div class="term-output">&nbsp;&nbsp;<span class="term-key">"mode"</span>: <span class="term-val">"remote_global"</span>,</div>
+          <div class="term-output">&nbsp;&nbsp;<span class="term-key">"contact"</span>: <span class="term-val">"oslanevillalobos@yahoo.com"</span></div>
+          <div class="term-output">}</div>
+          <div style="margin-top:0.75rem;"><span class="term-prompt">$ </span><span class="term-cmd" style="animation: blink 1s step-end infinite;">_</span></div>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © <span id="year"></span> OslanV — <span data-i18n="footer.rights">All rights reserved</span>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- CONTACT -->
+  <section id="contacto">
+    <p class="section-label">// <span data-i18n="nav.contact">contact</span></p>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2>Let's build<br>something great.</h2>
+        <br>
+        <p class="contact-desc" data-i18n="contact.subtitle">Ready to start? Book a call or send me a message.</p>
+        <div class="availability-badge">
+          <span class="status-dot"></span>
+          <span data-i18n="contact.open">Open to projects</span>
+          &nbsp;·&nbsp;
+          <span data-i18n="contact.remote">Remote / Global</span>
+        </div>
+        <br>
+        <button class="contact-email js-email-copy" data-email="oslanevillalobos@yahoo.com">
+          ✉&nbsp; oslanevillalobos@yahoo.com
+        </button>
+        <div class="social-links">
+          <a class="social-link" href="https://www.linkedin.com/in/oslan-villalobos-51287b116/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="social-link" href="https://github.com/Oslan17" target="_blank" rel="noopener">GitHub</a>
+          <a class="social-link" href="https://x.com/oslan_evp" target="_blank" rel="noopener">X / Twitter</a>
         </div>
       </div>
-    </footer>
 
+      <div class="terminal reveal">
+        <div class="terminal-bar">
+          <div class="term-dot td1"></div>
+          <div class="term-dot td2"></div>
+          <div class="term-dot td3"></div>
+          <span class="terminal-title">oslan@consulting ~ contact</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="term-prompt">$ </span><span class="term-cmd">ping oslan.dev</span></div>
+          <div class="term-output">PING oslan.dev (93.184.216.34)</div>
+          <div class="term-output">64 bytes: icmp_seq=1 ttl=64 <span style="color:var(--accent3)">time=0.42ms</span></div>
+          <div class="term-output">Response: <span style="color:var(--accent3)">available ✓</span></div>
+          <br>
+          <div><span class="term-prompt">$ </span><span class="term-cmd">cat availability.txt</span></div>
+          <div class="term-output">Status: <span style="color:var(--accent3)">open_to_work</span></div>
+          <div class="term-output">Type: <span style="color:var(--accent)">freelance / consulting</span></div>
+          <div class="term-output">Start: <span style="color:var(--accent)">immediately</span></div>
+          <div style="margin-top:0.75rem;"><span class="term-prompt">$ </span><span class="term-cmd" style="animation: blink 1s step-end infinite;">_</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
-  </html>
+  <!-- CLOUD LOGOS -->
+  <div class="logos-wrap reveal">
+    <p class="logos-label" data-i18n="logos.title">I work with</p>
+    <div class="logos-strip">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services" height="28" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud" height="28" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Microsoft Azure" height="28" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      © <span id="year">2025</span> <span>Oslan Villalobos</span> · Built with HTML &amp; CSS
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/oslan-villalobos-51287b116/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Oslan17" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://x.com/oslan_evp" target="_blank" rel="noopener">X</a>
+      <a href="mailto:oslanevillalobos@yahoo.com">Email</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
