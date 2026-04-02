@@ -206,14 +206,25 @@
     if (!slug) {
       document.getElementById('postContent').innerHTML = '<p class="post-error">No post specified. <a href="blog.html">Back to blog.</a></p>';
     } else {
-      // Configure marked with highlight.js (compatible with v9+)
-      const renderer = new marked.Renderer();
-      renderer.code = function({ text, lang }) {
-        const language = lang && hljs.getLanguage(lang) ? lang : 'plaintext';
-        const highlighted = hljs.highlight(text, { language }).value;
-        return `<pre><code class="hljs language-${language}">${highlighted}</code></pre>`;
-      };
-      marked.use({ renderer, breaks: true, gfm: true });
+      // Configure marked with highlight.js (marked v9 uses marked.use renderer object)
+      marked.use({
+        breaks: true,
+        gfm: true,
+        renderer: {
+          code(token) {
+            // marked v9 passes a token object { text, lang }; older passes string args
+            const text = typeof token === 'string' ? token : (token.text || '');
+            const lang = typeof token === 'string' ? (arguments[1] || '') : (token.lang || '');
+            const language = lang && hljs.getLanguage(lang) ? lang : 'plaintext';
+            try {
+              const highlighted = hljs.highlight(text, { language }).value;
+              return `<pre><code class="hljs language-${language}">${highlighted}</code></pre>`;
+            } catch {
+              return `<pre><code class="language-${language}">${text}</code></pre>`;
+            }
+          }
+        }
+      });
 
       // Load post metadata then the markdown file
       fetch('posts/index.json')
@@ -241,8 +252,12 @@
               <p class="post-excerpt-head">${meta.excerpt}</p>
             </div>` : '';
 
+          let rendered;
+          try { rendered = marked.parse(body); }
+          catch (e) { rendered = `<pre style="white-space:pre-wrap">${body}</pre>`; }
+
           document.getElementById('postContent').innerHTML =
-            header + `<div class="post-body">${marked.parse(body)}</div>`;
+            header + `<div class="post-body">${rendered}</div>`;
 
           // Update page title
           if (meta) document.title = `${meta.title} — Oslan Villalobos`;
