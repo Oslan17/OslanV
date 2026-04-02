@@ -101,19 +101,23 @@
       color: var(--accent3);
     }
     .post-body pre {
-      background: #0d1117 !important;
       border: 1px solid var(--border);
       border-radius: 8px;
       overflow-x: auto;
       margin: 1.5rem 0;
-    }
-    .post-body pre code {
-      background: transparent;
-      border: none;
       padding: 0;
-      color: inherit;
+    }
+    .post-body pre code,
+    .post-body pre code.hljs {
+      display: block;
+      background: #0d1117;
+      border: none;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
       font-size: 0.82rem;
-      line-height: 1.6;
+      line-height: 1.75;
+      overflow-x: auto;
+      color: #c9d1d9;
     }
     .post-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; }
     .post-body th { font-family: 'DM Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); border-bottom: 1px solid var(--border); padding: 0.75rem; text-align: left; }
@@ -202,17 +206,14 @@
     if (!slug) {
       document.getElementById('postContent').innerHTML = '<p class="post-error">No post specified. <a href="blog.html">Back to blog.</a></p>';
     } else {
-      // Configure marked with highlight.js
-      marked.setOptions({
-        highlight: (code, lang) => {
-          if (lang && hljs.getLanguage(lang)) {
-            return hljs.highlight(code, { language: lang }).value;
-          }
-          return hljs.highlightAuto(code).value;
-        },
-        breaks: true,
-        gfm: true
-      });
+      // Configure marked with highlight.js (compatible with v9+)
+      const renderer = new marked.Renderer();
+      renderer.code = function({ text, lang }) {
+        const language = lang && hljs.getLanguage(lang) ? lang : 'plaintext';
+        const highlighted = hljs.highlight(text, { language }).value;
+        return `<pre><code class="hljs language-${language}">${highlighted}</code></pre>`;
+      };
+      marked.use({ renderer, breaks: true, gfm: true });
 
       // Load post metadata then the markdown file
       fetch('posts/index.json')
@@ -246,8 +247,8 @@
           // Update page title
           if (meta) document.title = `${meta.title} — Oslan Villalobos`;
 
-          // Highlight any remaining code blocks
-          document.querySelectorAll('.post-body pre code').forEach(el => hljs.highlightElement(el));
+          // Highlight any code blocks not already processed by the renderer
+          document.querySelectorAll('.post-body pre code:not(.hljs)').forEach(el => hljs.highlightElement(el));
         })
         .catch(err => {
           document.getElementById('postContent').innerHTML =
