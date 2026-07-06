@@ -1,5 +1,19 @@
 [
   {
+    "slug": "openlit-eks-fargate",
+    "title": "Self-Hosting OpenLIT on EKS Fargate: GenAI Observability with Full GitOps",
+    "date": "2026-07-06",
+    "cat": "k8s",
+    "excerpt": "How I deployed OpenLIT + ClickHouse on Fargate with Terraform, ArgoCD and Vault — LLM traces, token usage and cost per model with a one-line SDK integration. Static EFS provisioning tricks, sync-wave ordering, and the gotchas that will bite you."
+  },
+  {
+    "slug": "soc2-platform-engineering",
+    "title": "SOC 2 from the Platform Side: What Compliance Actually Means for a DevOps Engineer",
+    "date": "2026-06-20",
+    "cat": "sre",
+    "excerpt": "Least-privilege IAM, secrets in Vault, encryption by default, GitOps as change management, and backups as code — how the five audit buckets map to platform work, and why structural evidence beats screenshots."
+  },
+  {
     "slug": "eks-fargate-migration",
     "title": "Migrating EKS from Fargate to EC2 Node Groups: A 4-Phase Approach",
     "date": "2025-03-18",
